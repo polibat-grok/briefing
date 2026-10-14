@@ -1,0 +1,268 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>클로옵스 070 번호로 그록 전화 비서 만들기</title>
+<style>
+body{margin:0;font:17px/1.65 -apple-system,"Apple SD Gothic Neo","Noto Sans KR",sans-serif;background:#f6f4ef;color:#1b1b1b}
+main{max-width:720px;margin:auto;padding:18px}
+h1{font-size:26px;line-height:1.3;margin:8px 0}h2{font-size:21px;margin:34px 0 8px;border-top:3px solid #1b1b1b;padding-top:12px}
+h3{font-size:18px;margin:20px 0 4px}
+.box{background:#fff;border-left:5px solid #d6402b;padding:12px 14px;border-radius:6px;margin:12px 0}
+.ok{border-color:#2a8a4a}.warn{border-color:#e0a100;background:#fffaf0}
+pre{background:#16181d;color:#e8e8e8;padding:12px;border-radius:8px;overflow-x:auto;font-size:13px;line-height:1.5;white-space:pre}
+code{font-family:ui-monospace,Menlo,monospace}p code,li code,td code{background:#e9e5dc;padding:1px 5px;border-radius:4px;font-size:14px;word-break:break-all}
+table{border-collapse:collapse;width:100%;background:#fff;font-size:15px}td,th{border:1px solid #ddd;padding:8px;text-align:left;vertical-align:top}th{background:#efebe2}
+.tag{display:inline-block;font-size:12px;background:#e0a100;color:#fff;padding:1px 6px;border-radius:4px}
+ol li,ul li{margin:4px 0}small{color:#666}
+</style></head><body><main>
+<small>브리핑 · 2026-10-15 · 클로옵스 버전 · 1달러=1,337원</small>
+<h1>📞 클로옵스 070 번호로 걸려 온 전화를 그록이 받고, 요약은 텔레그램으로</h1>
+
+<div class="box"><b>결론</b>
+<ul>
+<li>길은 하나예요. <b>클로옵스가 070 전화를 그록 주소(SIP)로 그대로 넘기고</b>, 그록이 통화합니다. 내 서버는 "전화 왔어요" 알림만 받아서 말투를 정하고, 끝나면 요약을 보냅니다.</li>
+<li>클로옵스 공식 문서에 <b>OpenAI·ElevenLabs로 넘기는 예시가 있어요.</b> 그록은 목록에 없지만 방식이 거의 같아서 될 가능성이 높습니다. <span class="tag">미확인</span></li>
+<li>필요한 것: 클로옵스 계정과 070 번호, <b>「SIP 트렁크 연결」 부가서비스</b>, xAI API 키, 내 맥과 ngrok, 텔레그램 봇.</li>
+<li>비용: 그록 1분 약 107원 + 클로옵스 받는 전화는 요금제 포함. 다만 SIP 부가서비스가 <b>월 99,000원일 수 있어요</b> <span class="tag">미확인</span>.</li>
+</ul></div>
+
+<h2>0. 그림 한 장</h2>
+<ol>
+<li>누가 내 070 번호로 전화</li>
+<li>클로옵스가 그 전화를 <code>sip:+8270…@sip.voice.x.ai</code>(그록)로 넘김</li>
+<li>그록이 내 서버로 "전화 왔어요(<code>realtime.call.incoming</code>)" 알림</li>
+<li>내 서버가 그 통화에 접속해서 한국어 말투·안내 문구를 지정 → 그록이 대화</li>
+<li>끊기면 내 서버가 대화 원문을 그록에게 요약시켜 텔레그램으로 전송</li>
+</ol>
+<p>음성 자체는 클로옵스와 그록이 직접 주고받아요. 내 서버는 지시와 기록만 맡아서 코드가 짧습니다.</p>
+
+<h2>1. 비용과 요금제</h2>
+<table><tr><th>항목</th><th>요금</th><th>비고</th></tr>
+<tr><td>클로옵스 Trial</td><td>무료, 3일</td><td>번호 1개, 받는 전화 무제한, 카드 등록 없음</td></tr>
+<tr><td>클로옵스 Individual</td><td>월 19,000원</td><td>받는 전화 월 1,000분 포함</td></tr>
+<tr><td>클로옵스 Business</td><td>월 99,000원</td><td>동시 통화 10개, 받는 전화 월 10,000분</td></tr>
+<tr><td>SIP 부가서비스</td><td>월 99,000원? <span class="tag">미확인</span></td><td>가격표엔 「SIP 직접연결」, 문서엔 「SIP 트렁크 연결」이라고 적혀 있어 같은 상품인지 불확실</td></tr>
+<tr><td>그록 음성</td><td>1분 $0.08(약 107원)</td><td>xAI 크레딧에서 차감</td></tr>
+<tr><td>요약·ngrok·텔레그램</td><td>거의 0원</td><td>요약은 통화당 10원 미만</td></tr></table>
+<p>예시: 한 달에 3분짜리 전화 100통을 받으면 그록 요금은 약 32,000원이에요. 여기에 클로옵스 요금제와 부가서비스가 더해집니다. 클로옵스 가격은 모두 부가세 포함입니다.</p>
+<div class="box warn"><span class="tag">미확인</span> Trial(무료 3일)에서도 SIP 부가서비스를 켤 수 있는지는 문서에 없어요. 가입하자마자 <b>대시보드 → 부가서비스</b>에 「SIP 트렁크 연결」이 켜지는지부터 보세요. 안 켜지면 아래 「클로옵스에 물어볼 것」을 보내세요.</div>
+
+<h2>2. 가입 (20분)</h2>
+<h3>① 클로옵스</h3>
+<ul><li><a href="https://claw-ops.com/">claw-ops.com</a> → <b>무료로 시작하기</b>로 가입합니다.</li>
+<li>대시보드 → <b>번호</b>에서 070 번호를 하나 받습니다. 예: <code>070-1234-5678</code></li>
+<li>대시보드 → <b>부가서비스</b> → <b>SIP 트렁크 연결</b>을 켭니다.</li></ul>
+<h3>② xAI 콘솔</h3>
+<ul><li><a href="https://console.x.ai">console.x.ai</a> → <b>Billing</b>에서 $10(약 13,370원)을 충전합니다.</li>
+<li><b>API Keys</b> → Create를 누르고, 나온 <code>xai-...</code>를 메모합니다.</li></ul>
+<h3>③ 텔레그램 봇</h3>
+<ul><li>@BotFather → <code>/newbot</code>을 보내고 토큰을 복사합니다.</li>
+<li>내 봇에게 <code>/start</code>를 보낸 뒤 <code>https://api.telegram.org/bot&lt;토큰&gt;/getUpdates</code>를 엽니다. <code>"chat":{"id":숫자</code>의 숫자가 CHAT_ID예요.</li></ul>
+<h3>④ 맥 준비</h3>
+<pre><code>brew install node ngrok
+ngrok config add-authtoken &lt;ngrok 대시보드 토큰&gt;</code></pre>
+<p>ngrok 대시보드 → <b>Domains</b>에서 무료 고정 주소를 하나 받으세요. 예: <code>elon-call.ngrok-free.app</code></p>
+
+<h2>3. 서버 만들기 (Claude Code에 붙여넣기)</h2>
+<pre><code>~/grok-070 폴더에 TypeScript 서버를 만들어줘.
+의존성: express ws dotenv, 개발: tsx typescript @types/express @types/ws @types/node
+package.json에 "type":"module", "dev":"tsx watch src/index.ts"
+아래 src/index.ts를 그대로 쓰고 .env를 만들어줘(값은 내가 넣을게):
+XAI_API_KEY=
+XAI_WEBHOOK_SECRET=
+TELEGRAM_BOT_TOKEN=
+TELEGRAM_CHAT_ID=
+XAI_TEXT_MODEL=grok-4.3
+PORT=8000
+그리고 npm install 후 npm run dev로 켜줘.</code></pre>
+
+<h3>src/index.ts (전체)</h3>
+<pre><code>import "dotenv/config";
+import express from "express";
+import crypto from "node:crypto";
+import WebSocket from "ws";
+
+const KEY = process.env.XAI_API_KEY!;
+const SECRET = process.env.XAI_WEBHOOK_SECRET!;
+const TG = process.env.TELEGRAM_BOT_TOKEN!;
+const CHAT = process.env.TELEGRAM_CHAT_ID!;
+const MODEL = process.env.XAI_TEXT_MODEL || "grok-4.3";
+
+const INSTRUCTIONS = `너는 일론 김 대표의 전화 비서야. 한국어로 짧고 공손하게 말해.
+첫마디는 반드시: "안녕하세요, 김 대표 비서입니다. 이 통화는 AI가 받고 내용이 기록·요약됩니다."
+그다음 이름, 용건, 회신 받을 연락처를 차례로 물어봐.
+모르는 건 지어내지 말고 "대표님께 전달해 회신드리겠습니다"라고 해.
+다 들었으면 내용을 한 번 확인하고 인사로 마무리해.`;
+
+// ① 서명 검증 (webhook-id / webhook-timestamp / webhook-signature)
+function verify(raw: string, h: any): boolean {
+  const id = h["webhook-id"], ts = h["webhook-timestamp"], sig = h["webhook-signature"];
+  if (!id || !ts || !sig) return false;
+  if (Math.abs(Date.now() / 1000 - Number(ts)) &gt; 300) return false; // 5분 넘은 요청 거부
+  const key = SECRET.startsWith("whsec_")
+    ? Buffer.from(SECRET.slice(6), "base64") : Buffer.from(SECRET);
+  const expected = crypto.createHmac("sha256", key)
+    .update(`${id}.${ts}.${raw}`).digest("base64");
+  return String(sig).split(" ").some(s =&gt; {
+    const v = s.split(",")[1] ?? s;
+    return v.length === expected.length &amp;&amp;
+      crypto.timingSafeEqual(Buffer.from(v), Buffer.from(expected));
+  });
+}
+
+// ② 통화 접속 + 받아쓰기 모으기
+function joinCall(callId: string, from: string) {
+  const lines: string[] = [];
+  const started = Date.now();
+  let bot = "";
+  const ws = new WebSocket(`wss://api.x.ai/v1/realtime?call_id=${callId}`,
+    { headers: { Authorization: `Bearer ${KEY}` } });
+
+  ws.on("open", () =&gt; {
+    ws.send(JSON.stringify({ type: "session.update", session: {
+      voice: "eve",
+      instructions: INSTRUCTIONS,
+      turn_detection: { type: "server_vad" },
+      audio: { input: { transcription: {
+        model: "grok-transcribe", language_hint: "ko",
+        keyterms: ["정치방망이", "립보기", "김 대표"] } } },
+    }}));
+    ws.send(JSON.stringify({ type: "response.create" })); // 그록이 먼저 인사
+  });
+
+  ws.on("message", (d) =&gt; {
+    const e = JSON.parse(d.toString());
+    if (e.type === "response.output_audio_transcript.delta") bot += e.delta ?? "";
+    if (e.type === "response.done" &amp;&amp; bot) { lines.push("그록: " + bot); bot = ""; }
+    if (e.type === "conversation.item.input_audio_transcription.completed")
+      lines.push("상대: " + e.transcript);
+    if (e.type === "error") console.error("[xai]", e);
+  });
+
+  ws.on("close", () =&gt; { if (bot) lines.push("그록: " + bot); report(from, lines, started); });
+}
+
+// ③ 끊기면 요약 → 텔레그램
+async function report(from: string, lines: string[], started: number) {
+  const transcript = lines.join("\n") || "(대화 없음)";
+  let summary = "(요약 실패)";
+  try {
+    const r = await fetch("https://api.x.ai/v1/chat/completions", {
+      method: "POST",
+      headers: { Authorization: `Bearer ${KEY}`, "Content-Type": "application/json" },
+      body: JSON.stringify({ model: MODEL, messages: [
+        { role: "system", content: "전화 기록을 한국어로 요약해. 발신자/용건/요청/연락처/후속조치 각 1줄." },
+        { role: "user", content: transcript } ] }),
+    });
+    const j: any = await r.json();
+    summary = j.choices?.[0]?.message?.content ?? JSON.stringify(j).slice(0, 300);
+  } catch (e) { console.error(e); }
+  const min = ((Date.now() - started) / 60000).toFixed(1);
+  const text = `📞 ${from} · ${min}분\n\n🧾 요약\n${summary}\n\n💬 원문\n${transcript}`;
+  for (let i = 0; i &lt; text.length; i += 4000)
+    await fetch(`https://api.telegram.org/bot${TG}/sendMessage`, {
+      method: "POST", headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ chat_id: CHAT, text: text.slice(i, i + 4000) }) });
+}
+
+const app = express();
+app.get("/health", (_q, s) =&gt; s.json({ status: "ok" }));
+app.post("/xai/sip-webhook", express.raw({ type: "*/*" }), (req, res) =&gt; {
+  const raw = (req.body as Buffer).toString("utf8");
+  if (!verify(raw, req.headers)) return res.status(400).send("bad signature");
+  const ev = JSON.parse(raw);
+  if (ev.type === "realtime.call.incoming") {
+    const from = ev.data.sip_headers?.find((h: any) =&gt; /^from$/i.test(h.name))?.value ?? "?";
+    console.log("전화 옴", ev.data.call_id, from);
+    joinCall(ev.data.call_id, from);
+  }
+  res.sendStatus(200);   // 빨리 200 응답
+});
+app.listen(Number(process.env.PORT ?? 8000), () =&gt; console.log("ready"));</code></pre>
+<div class="box warn"><span class="tag">미확인</span> 4가지는 아직 직접 돌려 보지 않았어요.
+<ul>
+<li>서명 방식: xAI 문서에는 헤더 이름 3개만 나와 있어요. 위 코드는 업계 표준 방식(Standard Webhooks)으로 가정했습니다. 계속 400이 나면 잠깐 검증을 끄고 로그로 확인하세요.</li>
+<li>OpenAI는 통화를 받으려면 <code>accept</code> 호출이 필요한데, xAI 문서는 WebSocket 접속만 안내해요. 접속해도 전화가 안 받아지면 이 부분을 의심하세요.</li>
+<li>상대방 말 받아쓰기 완료 이벤트 이름(<code>…transcription.completed</code>)은 OpenAI와 같다고 가정했어요.</li>
+<li>요약 모델 <code>grok-4.3</code>은 xAI 모델 목록에 있는 이름이에요. 콘솔 <b>Models</b>에서 한 번 확인하세요.</li>
+</ul></div>
+
+<h3>켜기 (터미널 2개)</h3>
+<pre><code># 터미널 1
+cd ~/grok-070 &amp;&amp; npm run dev
+# 터미널 2
+ngrok http --url=elon-call.ngrok-free.app 8000</code></pre>
+<p>브라우저에서 <code>https://elon-call.ngrok-free.app/health</code>를 열어 <code>ok</code>가 나오면 됩니다.</p>
+
+<h2>4. 내 070 번호를 xAI에 등록 (1번만)</h2>
+<p>터미널에 붙여 넣으세요. 번호는 <b>+82 뒤에 0을 뺀 형태</b>로 씁니다(070-1234-5678 → <code>+827012345678</code>).</p>
+<pre><code>curl -X POST https://api.x.ai/v2/phone-numbers \
+  -H "Authorization: Bearer xai-여기에키" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "origin": "byo_trunk",
+    "name": "clawops-070",
+    "phone_number": "+827012345678",
+    "webhook": { "name": "my-webhook",
+      "url": "https://elon-call.ngrok-free.app/xai/sip-webhook" },
+    "sip_auth": { "allowed_addresses": ["34.47.65.45/32"] }
+  }'</code></pre>
+<ul>
+<li>응답에 나오는 <b>signing secret</b>을 <code>.env</code>의 <code>XAI_WEBHOOK_SECRET</code>에 넣고 서버를 다시 켜세요. <b>딱 한 번만 보여 줍니다.</b></li>
+<li><code>34.47.65.45</code>는 클로옵스가 공개한 SIP 신호 서버 주소예요. 연결이 거부되면 <code>sip_auth</code> 줄을 빼고 다시 시도해 보세요. 시험할 때만 그렇게 하세요. <span class="tag">미확인</span></li>
+<li>잘못 등록했으면 <code>GET /v2/phone-numbers</code>로 id를 찾아 <code>DELETE /v2/phone-numbers/{id}</code>로 지우면 됩니다.</li></ul>
+<div class="box warn"><span class="tag">미확인</span> xAI가 한국 번호(+8270…)를 등록해 주는지, 번호 형식을 <code>+827012345678</code>로 받는지는 실제로 해 봐야 알아요. 에러가 나면 에러 문구를 보내 주세요.</div>
+
+<h2>5. 클로옵스에서 그록으로 넘기기 (5분)</h2>
+<p>클로옵스의 OpenAI 연결 안내와 같은 화면, 같은 순서예요.</p>
+<ol>
+<li><a href="https://platform.claw-ops.com/phone-numbers/sip-endpoints">대시보드 → 번호 → SIP 엔드포인트</a>로 가서 <b>엔드포인트 추가</b>를 누르고 아래 표대로 넣습니다.</li></ol>
+<table><tr><th>필드</th><th>값</th></tr>
+<tr><td>엔드포인트 이름</td><td><code>Grok</code> (자유)</td></tr>
+<tr><td>User</td><td><code>+827012345678</code> (4단계에 넣은 번호와 똑같이)</td></tr>
+<tr><td>Host</td><td><code>sip.voice.x.ai</code></td></tr>
+<tr><td>Port</td><td><code>5061</code></td></tr>
+<tr><td>Transport</td><td><b>TLS</b></td></tr>
+<tr><td>외부 SIP 인증 사용</td><td>체크 안 함</td></tr></table>
+<p>미리보기에 <code>sip:+827012345678@sip.voice.x.ai:5061</code>이 보이면 됩니다.</p>
+<ol start="2">
+<li><a href="https://platform.claw-ops.com/phone-numbers">대시보드 → 번호</a>에서 내 070을 고르고, <b>인바운드 라우팅</b> 카드의 <b>수정</b>을 누릅니다. <b>SIP</b> 토글을 켜고 방금 만든 <code>Grok</code>을 고른 뒤 <b>저장</b>합니다.</li></ol>
+
+<h2>6. 시험 체크리스트</h2>
+<ul>
+<li>☐ <code>/health</code>가 ok로 나온다</li>
+<li>☐ 내 휴대폰으로 070 번호에 전화한다 (국내 전화라 요금이 싸요)</li>
+<li>☐ 터미널 1에 <code>전화 옴 …</code>이 찍힌다. <b>이게 찍히면 클로옵스에서 그록으로 넘어가는 건 성공입니다.</b></li>
+<li>☐ 그록이 AI·기록 안내로 먼저 인사한다</li>
+<li>☐ 말을 끊고 끼어들면 그록이 멈춘다</li>
+<li>☐ 끊고 10초 안에 텔레그램에 요약과 원문이 온다</li>
+<li>☐ 원문에 「상대:」 줄이 있다 (내 말도 받아써졌다)</li></ul>
+
+<h2>7. 문제 해결</h2>
+<table><tr><th>증상</th><th>의심 지점</th><th>해볼 것</th></tr>
+<tr><td>신호만 가다 끊기고 로그가 없음</td><td>클로옵스→그록 연결 실패</td><td>User 번호가 4단계와 같은지, Port 5061·TLS인지 확인. 클로옵스 통화 기록의 실패 사유를 캡처해서 보내기</td></tr>
+<tr><td>로그에 400 bad signature</td><td>서명 방식이나 비밀키</td><td>secret을 다시 확인. 시험으로 검증을 끄고 동작 확인</td></tr>
+<tr><td>"전화 옴"은 찍히는데 무음</td><td>접속 실패 또는 accept 필요</td><td>로그의 <code>[xai]</code> 에러 확인. 키와 크레딧 확인</td></tr>
+<tr><td>한쪽 말만 들림</td><td>음성(RTP) 차단</td><td>클로옵스에 문의. 음성 서버 IP는 <code>34.64.155.183</code></td></tr>
+<tr><td>요약에 그록 말만 있음</td><td>받아쓰기 이벤트 이름</td><td>Claude Code에 "모든 이벤트 type을 로그로 찍어줘"라고 하고, 상대 말이 담긴 이벤트를 찾기</td></tr>
+<tr><td>텔레그램이 안 옴</td><td>CHAT_ID</td><td>봇에게 /start를 보낸 뒤 getUpdates 다시 보기</td></tr></table>
+
+<h2>8. 클로옵스에 물어볼 것</h2>
+<div class="box">
+<ol>
+<li>「SIP 트렁크 연결」로 070 수신 전화를 <b>xAI(<code>sip:+8270…@sip.voice.x.ai:5061;transport=tls</code>)</b>로 넘길 수 있나요? 해 본 고객이 있나요?</li>
+<li>그 부가서비스가 가격표의 「SIP 직접연결 월 99,000원」과 같은 상품인가요? <b>Trial·Individual</b>에서도 쓸 수 있나요?</li>
+<li>외부 SIP로 보낼 때 나가는 IP(신호·음성)는 무엇인가요? xAI 허용 목록에 넣으려고요.</li>
+<li>Request-URI에 번호를 E.164(<code>+8270…</code>)로 실어 보낼 수 있나요?</li>
+<li>코덱은 G.711 μ-law/A-law를 쓰나요? xAI는 G.711·G.722를 받아요.</li></ol></div>
+
+<h2>9. 안 되면: 다른 길 두 가지</h2>
+<ul>
+<li><b>클로옵스 Stream:</b> 클로옵스가 음성을 WebSocket으로 내 서버에 보내 주는 기능(<code>&lt;Connect&gt;&lt;Stream&gt;</code>, G.711 μ-law)이 있어요. 내 서버가 그 음성을 그록과 이어 주면 됩니다. 부가서비스가 필요 없을 수 있지만, 코드는 SIP 방식보다 깁니다.</li>
+<li><b>Twilio 미국 번호:</b> 서류 없이 오늘 바로 되는 방법이에요. xAI 공식 예제가 그대로 돌아갑니다. 단점은 번호가 미국 번호라 국제전화로 걸어야 한다는 점이에요. 체험 계정은 인증한 번호에서 건 전화만 받습니다. <a href="https://polibat-grok.github.io/briefing/grok-phone-agent-fa6e7763.html">이전 Twilio 설명서</a>를 따라 하시면 돼요.</li></ul>
+
+<h2>10. 꼭 지킬 것</h2>
+<ul><li>첫마디에 "AI가 받고 기록·요약됩니다"라는 안내를 넣으세요. 위 코드에 이미 들어 있어요.</li>
+<li>사업화할 때 개인정보 동의와 보관 기간은 법률 검토가 필요해요 <span class="tag">미확인</span>.</li>
+<li>상시로 운영하려면 맥 대신 클라우드에 올리고, xAI에 등록한 webhook 주소만 바꾸면 됩니다.</li></ul>
+
+<p><small>출처: <a href="https://platform.claw-ops.com/docs/sip-trunk">클로옵스 SIP 트렁크</a> · <a href="https://platform.claw-ops.com/docs/sip-trunk/openai-realtime">클로옵스 OpenAI 연결 가이드</a> · <a href="https://platform.claw-ops.com/docs/network">클로옵스 IP 목록</a> · <a href="https://claw-ops.com/pricing">클로옵스 가격</a> · <a href="https://docs.x.ai/developers/model-capabilities/audio/speech-to-speech/sip">xAI SIP 문서</a> · <a href="https://docs.x.ai/developers/model-capabilities/audio/speech-to-speech">xAI 음성 API</a></small></p>
+</main></body></html>
