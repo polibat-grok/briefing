@@ -1,0 +1,179 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>내 전화를 그록이 받게 만들기 — 따라 하기</title>
+<style>
+body{margin:0;font:17px/1.65 -apple-system,"Apple SD Gothic Neo","Noto Sans KR",sans-serif;background:#f6f4ef;color:#1b1b1b}
+main{max-width:720px;margin:auto;padding:18px}
+h1{font-size:26px;line-height:1.3;margin:8px 0}h2{font-size:21px;margin:34px 0 8px;border-top:3px solid #1b1b1b;padding-top:12px}
+h3{font-size:18px;margin:20px 0 4px}
+.box{background:#fff;border-left:5px solid #d6402b;padding:12px 14px;border-radius:6px;margin:12px 0}
+.ok{border-color:#2a8a4a}.warn{border-color:#e0a100;background:#fffaf0}
+pre{background:#16181d;color:#e8e8e8;padding:12px;border-radius:8px;overflow-x:auto;font-size:13.5px;line-height:1.5;white-space:pre}
+code{font-family:ui-monospace,Menlo,monospace}p code,li code{background:#e9e5dc;padding:1px 5px;border-radius:4px;font-size:14px;word-break:break-all}
+table{border-collapse:collapse;width:100%;background:#fff;font-size:15px}td,th{border:1px solid #ddd;padding:8px;text-align:left;vertical-align:top}th{background:#efebe2}
+.tag{display:inline-block;font-size:12px;background:#e0a100;color:#fff;padding:1px 6px;border-radius:4px}
+ol li,ul li{margin:4px 0}small{color:#666}
+</style></head><body><main>
+<small>브리핑 · 2026-10-15 · 1달러=1,337원</small>
+<h1>📞 내 전화를 그록이 받고, 끝나면 요약이 텔레그램으로 오게 만들기</h1>
+
+<div class="box"><b>결론</b>
+<ul>
+<li>오늘 하루면 됩니다. 필요한 건 <b>xAI API 키 · Twilio 미국 번호 · 내 맥 + ngrok</b> 세 가지.</li>
+<li>xAI 공식 예제(Twilio Media Streams 방식)를 그대로 쓰고, <b>"통화 끝나면 원문+요약을 텔레그램으로"</b> 부분만 30줄 추가합니다.</li>
+<li>비용: 10분 통화 ≈ <b>$0.89(약 1,190원)</b> + 번호 월 약 $1.15(약 1,540원).</li>
+</ul></div>
+
+<h2>왜 이 방법(Media Streams)인가</h2>
+<table><tr><th></th><th>✅ 공식 예제 (Media Streams)</th><th>SIP 직결</th></tr>
+<tr><td>설정</td><td>번호에 웹훅 주소 1줄</td><td>SIP 트렁크 생성 + xAI에 번호 등록 API + 서명 검증</td></tr>
+<tr><td>코드</td><td>완성된 예제 있음</td><td>직접 작성</td></tr>
+<tr><td>장점</td><td>오늘 바로 됨</td><td>음질·지연 조금 유리, 키패드(DTMF)·전환 지원</td></tr></table>
+<p>→ 지금은 Media Streams로 시험. 정식 콜센터 때 SIP(<code>sip:{번호}@sip.voice.x.ai;transport=tls</code>)로 옮기면 됩니다. 어차피 둘 다 내 서버는 필요해요.</p>
+
+<h2>0. 그림 한 장</h2>
+<ol><li>누가 Twilio 번호로 전화</li><li>Twilio → 내 맥(ngrok 주소)으로 음성 실시간 전달</li><li>내 맥 → 그록 음성(<code>wss://api.x.ai/v1/realtime</code>)이 대화</li><li>끊기면 → 대화 원문을 그록 텍스트 API로 요약 → 텔레그램 전송</li></ol>
+
+<h2>1. 가입 3곳 (20분)</h2>
+<h3>① xAI 콘솔</h3>
+<ul><li><a href="https://console.x.ai">console.x.ai</a> 로그인 → <b>Billing</b>에서 크레딧 $10(약 13,370원) 충전</li>
+<li><b>API Keys</b> → Create → <code>xai-...</code> 복사해 메모</li></ul>
+<h3>② Twilio</h3>
+<ul><li><a href="https://www.twilio.com/try-twilio">twilio.com/try-twilio</a> 가입 (무료 체험 크레딧 제공)</li>
+<li>콘솔 → <b>Phone Numbers → Manage → Buy a number</b> → Country: United States, Capabilities: <b>Voice</b> 체크 → Buy</li>
+<li>체험 계정에서도 번호 1개 받을 수 있어요(체험 크레딧에서 차감).</li></ul>
+<h3>③ 텔레그램 봇 (결과 받을 곳)</h3>
+<ul><li>텔레그램에서 <b>@BotFather</b> → <code>/newbot</code> → 토큰 복사</li>
+<li>만든 봇에게 아무 말이나 보낸 뒤, 브라우저로 <code>https://api.telegram.org/bot&lt;토큰&gt;/getUpdates</code> 열기 → <code>"chat":{"id":숫자</code> 의 숫자가 CHAT_ID</li></ul>
+
+<h2>2. 내 맥 준비 (10분)</h2>
+<pre><code>brew install node ngrok
+ngrok config add-authtoken &lt;ngrok.com 대시보드의 토큰&gt;</code></pre>
+<p>ngrok 대시보드 → <b>Domains</b>에서 무료 고정 도메인 1개 받기(예: <code>elon-call.ngrok-free.app</code>). 매번 주소가 안 바뀌어 편해요.</p>
+
+<h2>3. 예제 받아서 켜기 (Claude Code에 붙여넣기)</h2>
+<pre><code>xai-org/xai-cookbook 저장소의 examples/voice-agent-phone/xai 폴더만
+~/grok-phone 으로 가져와서 npm install 해줘.
+.env.example을 .env로 복사하고 아래 값을 채워줘:
+XAI_API_KEY=(내가 줄게)
+HOSTNAME=https://elon-call.ngrok-free.app
+API_URL=wss://api.x.ai/v1/realtime
+TELEGRAM_BOT_TOKEN=(내가 줄게)
+TELEGRAM_CHAT_ID=(내가 줄게)
+src/bot.ts의 instructions를 한국어로 바꿔줘:
+"너는 일론 김 대표의 전화 비서야. 한국어로 짧고 공손하게 말해.
+먼저 '안녕하세요, 김 대표 비서입니다. 이 통화는 AI가 받고 요약됩니다.'라고 안내하고
+용건, 이름, 연락처를 물어봐."
+그리고 index.ts의 첫 인사 텍스트 'Say hello and introduce yourself'를
+'위 안내 문구로 인사해'로 바꿔줘.</code></pre>
+<p>터미널 2개:</p>
+<pre><code># 터미널 1
+cd ~/grok-phone && npm run dev
+# 터미널 2
+ngrok http --url=elon-call.ngrok-free.app 3000</code></pre>
+<p>확인: 브라우저에서 <code>https://elon-call.ngrok-free.app/health</code> → <code>"status":"ok"</code></p>
+
+<h2>4. Twilio 번호에 주소 연결 (3분)</h2>
+<ol><li>콘솔 → <b>Phone Numbers → Manage → Active Numbers</b> → 내 번호 클릭</li>
+<li><b>Voice Configuration</b>: A call comes in = <b>Webhook</b>, URL = <code>https://elon-call.ngrok-free.app/twiml</code>, Method = <b>HTTP POST</b></li>
+<li>(선택) Call status changes = <code>https://elon-call.ngrok-free.app/call-status</code></li><li><b>Save configuration</b></li></ol>
+
+<h2>5. 추가 코드: 끊으면 원문+요약을 텔레그램으로</h2>
+<p>Claude Code에 이렇게 말하세요: <b>"아래 코드를 src/report.ts로 만들고, index.ts의 media-stream 핸들러에 3군데 연결해줘."</b></p>
+<pre><code>// src/report.ts
+const XAI = process.env.XAI_API_KEY!;
+const TG = process.env.TELEGRAM_BOT_TOKEN!;
+const CHAT = process.env.TELEGRAM_CHAT_ID!;
+const MODEL = process.env.XAI_TEXT_MODEL || "grok-4-fast-non-reasoning";
+
+export async function sendReport(lines: string[], startedAt: Date) {
+  if (!lines.length) return;
+  const transcript = lines.join("\n");
+  let summary = "(요약 실패)";
+  try {
+    const r = await fetch("https://api.x.ai/v1/chat/completions", {
+      method: "POST",
+      headers: { Authorization: `Bearer ${XAI}`, "Content-Type": "application/json" },
+      body: JSON.stringify({
+        model: MODEL,
+        messages: [
+          { role: "system", content: "전화 통화 기록을 한국어로 요약해. 형식: 발신자/용건/요청사항/연락처/후속조치, 각 1줄." },
+          { role: "user", content: transcript },
+        ],
+      }),
+    });
+    const j: any = await r.json();
+    summary = j.choices?.[0]?.message?.content || JSON.stringify(j).slice(0, 300);
+  } catch (e) { console.error(e); }
+  const mins = ((Date.now() - startedAt.getTime()) / 60000).toFixed(1);
+  const text = `📞 통화 종료 (${mins}분)\n\n🧾 요약\n${summary}\n\n💬 원문\n${transcript}`;
+  for (let i = 0; i &lt; text.length; i += 4000) {   // 텔레그램 4096자 제한
+    await fetch(`https://api.telegram.org/bot${TG}/sendMessage`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ chat_id: CHAT, text: text.slice(i, i + 4000) }),
+    });
+  }
+}</code></pre>
+<p>index.ts에 연결할 3군데:</p>
+<pre><code>// (1) 맨 위
+import { sendReport } from "./report";
+
+// (2) app.ws("/media-stream/:callId" ... 안, 맨 앞
+const lines: string[] = [];
+const startedAt = new Date();
+let botBuf = "";
+
+// (3) xaiWs.on('message') 안의 분기에 추가
+//   'response.output_audio_transcript.delta' → botBuf += message.delta;
+//   'response.done' → if (botBuf) { lines.push("그록: " + botBuf); botBuf = ""; }
+//   'conversation.item.input_audio_transcription.completed'
+//        → lines.push("상대: " + message.transcript);
+
+// (4) ws.on("close") 안, xaiWs.close() 다음
+sendReport(lines, startedAt);</code></pre>
+<div class="box warn"><span class="tag">미확인</span> 요약용 모델 이름(<code>grok-4-fast-non-reasoning</code>)은 콘솔 <b>Models</b>에서 실제 이름 확인 후 <code>.env</code>의 <code>XAI_TEXT_MODEL</code>로 바꾸세요. 상대방 말 받아쓰기 이벤트는 예제 코드에 있지만, 안 나오면 session.update에 받아쓰기 설정이 필요할 수 있어요(아래 문제 해결).</div>
+
+<h2>6. 시험 체크리스트</h2>
+<ul>
+<li>☐ <code>/health</code> 가 ok</li>
+<li>☐ 내 폰(체험 계정이면 <b>인증한 번호</b>)으로 Twilio 번호에 국제전화</li>
+<li>☐ 체험 계정 안내 멘트 → 아무 키 누르기 → 그록 인사 들림</li>
+<li>☐ 말 끊고 끼어들어도 그록이 멈추는지</li>
+<li>☐ 끊고 10초 안에 텔레그램에 요약+원문 도착</li>
+<li>☐ 터미널 1 로그에 <code>User: "..."</code> 줄이 찍히는지</li></ul>
+
+<h2>7. 비용</h2>
+<table><tr><th>항목</th><th>단가</th><th>원화</th></tr>
+<tr><td>그록 음성</td><td>$0.08/분</td><td>약 107원/분</td></tr>
+<tr><td>Twilio 미국 번호</td><td>약 $1.15/월 <span class="tag">변동</span></td><td>약 1,540원/월</td></tr>
+<tr><td>Twilio 수신</td><td>약 $0.0085/분 <span class="tag">변동</span></td><td>약 11원/분</td></tr>
+<tr><td>요약(텍스트)</td><td>통화당 1센트 미만</td><td>약 10원 미만</td></tr>
+<tr><td>ngrok·텔레그램</td><td>무료</td><td>0원</td></tr></table>
+<p>한국 폰에서 미국 번호로 거는 국제전화 요금은 내 통신사 요금이 따로 나와요. Twilio 단가는 <a href="https://www.twilio.com/en-us/voice/pricing/us">Twilio 미국 요금표</a>에서 최신 확인하세요(페이지가 동적이라 제가 숫자를 직접 못 읽었어요).</p>
+
+<h2>8. 체험(Trial) 계정 주의</h2>
+<ul><li>⚠️ <b>인증한 전화번호(Verified Caller IDs)에서 건 전화만</b> 받아요. 다른 사람이 걸면 안 됩니다.</li>
+<li>⚠️ 통화 시작 때 "Twilio 체험 계정" 영어 안내가 나오고 키를 눌러야 연결돼요.</li>
+<li>남한테 시켜 보려면 <b>Upgrade</b>(카드 등록·충전)하면 두 제한이 풀려요.</li></ul>
+
+<h2>9. 문제 해결</h2>
+<table><tr><th>증상</th><th>원인</th><th>해결</th></tr>
+<tr><td>"application error" 멘트</td><td>웹훅 주소 틀림·서버 꺼짐</td><td>/health 확인, URL 끝이 <code>/twiml</code>인지, POST인지</td></tr>
+<tr><td>연결되는데 무음</td><td>HOSTNAME 틀림</td><td>.env HOSTNAME = ngrok 주소와 정확히 일치</td></tr>
+<tr><td>로그에 401/ERROR</td><td>API 키·크레딧</td><td>키 재발급, Billing 잔액 확인</td></tr>
+<tr><td>요약에 그록 말만</td><td>상대방 받아쓰기 꺼짐</td><td>Claude Code: "xAI 문서 보고 session.update에 입력 받아쓰기 켜줘"</td></tr>
+<tr><td>텔레그램 안 옴</td><td>CHAT_ID·봇에 먼저 말 안 검</td><td>봇에게 /start 후 getUpdates 다시</td></tr>
+<tr><td>맥 잠자면 끊김</td><td>노트북 절전</td><td>시험 후 Railway 등 클라우드로 이전</td></tr></table>
+
+<h2>10. 다음 단계</h2>
+<h3>한국 번호</h3>
+<ul><li><b>클로옵스 070</b>: 3일 무료 체험, SIP로 외부 AI 연결 지원. <span class="tag">미확인</span> xAI 주소(<code>sip.voice.x.ai</code>)로 실제 넘어가는지 시험 필요 → SIP 방식으로 전환.</li>
+<li><b>Twilio 02</b>: 사업자등록증·서울 주소 증빙·대표자 신분증 심사 필요.</li></ul>
+<h3>녹음·AI 고지</h3>
+<ul><li>통화 첫마디에 "AI가 받고 내용이 기록·요약됩니다"를 꼭 넣으세요(위 인사말에 포함).</li>
+<li>사업화 시 개인정보 수집·보관 동의 문구와 보관 기간은 법률 검토 필요 <span class="tag">미확인</span>.</li></ul>
+<h3>상시 운영</h3>
+<ul><li>맥 대신 클라우드(Railway 등)에 올리고 HOSTNAME만 그 주소로 바꾸면 끝.</li></ul>
+
+<p><small>출처: <a href="https://github.com/xai-org/xai-cookbook/tree/main/examples/voice-agent-phone">xAI 공식 예제</a> · <a href="https://docs.x.ai/developers/model-capabilities/audio/speech-to-speech">음성 API 문서</a> · <a href="https://docs.x.ai/developers/model-capabilities/audio/speech-to-speech/sip">SIP 문서</a> · <a href="https://www.twilio.com/docs/voice/media-streams">Twilio Media Streams</a></small></p>
+</main></body></html>
