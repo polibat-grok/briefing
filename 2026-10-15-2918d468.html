@@ -1,0 +1,370 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>브리핑 데일리 제1호 · 2026-10-15</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Noto+Sans+KR:wght@400;500;700;900&family=Noto+Serif+KR:wght@500;700;900&family=Playfair+Display:ital,wght@1,500&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#f4efe4;--ink:#16130f;--muted:#5c554b;--rule:#1d1a16;--accent:#a3201b;--soft:#e8e0cf;--blue:#1f3b57}
+*{box-sizing:border-box}
+html{background:#d9d2c3}
+body{margin:0;color:var(--ink);font-family:'Nanum Myeongjo','Noto Serif KR',serif;font-size:16px;line-height:1.72;word-break:keep-all;overflow-wrap:break-word}
+.sheet{max-width:1240px;margin:24px auto;background:var(--paper);padding:26px 38px 40px;box-shadow:0 2px 0 #c9c0ad,0 18px 50px rgba(40,30,10,.25);
+ background-image:radial-gradient(rgba(120,100,60,.06) 1px,transparent 1px);background-size:4px 4px}
+a{color:inherit;text-decoration:none;border-bottom:1px dotted #8a7f6d}
+a:hover{color:var(--accent)}
+.src{font-family:'Noto Sans KR',sans-serif;font-size:11.5px;color:var(--muted);white-space:nowrap}
+.src a{border-bottom:1px solid #b7ab95}
+/* ear + masthead */
+.ears{display:flex;justify-content:space-between;align-items:center;font-family:'Noto Sans KR',sans-serif;font-size:11.5px;color:var(--muted);gap:12px}
+.ear{border:1px solid var(--rule);padding:6px 10px;max-width:260px;line-height:1.45;background:#f8f4ea}
+.ear b{color:var(--accent)}
+.mast{text-align:center;padding:6px 0 4px}
+.mast .kicker{font-family:'Noto Sans KR',sans-serif;letter-spacing:.5em;font-size:11px;color:var(--muted)}
+.mast h1{font-family:'Noto Serif KR',serif;font-weight:900;font-size:clamp(46px,9vw,112px);line-height:1;margin:6px 0 4px;letter-spacing:-.02em}
+.mast h1 .dot{color:var(--accent)}
+.mast .en{font-family:'Playfair Display',serif;font-style:italic;font-size:15px;color:var(--muted);letter-spacing:.08em}
+.dateline{display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px 18px;border-top:3px double var(--rule);border-bottom:1px solid var(--rule);padding:7px 2px;margin-top:10px;font-family:'Noto Sans KR',sans-serif;font-size:12.5px;font-weight:500}
+.dateline .c{font-weight:700}
+.index{display:flex;flex-wrap:wrap;gap:4px 16px;justify-content:center;font-family:'Noto Sans KR',sans-serif;font-size:12px;padding:6px 0;border-bottom:3px solid var(--rule)}
+.index a{border:0}.index a:before{content:'▸ ';color:var(--accent)}
+/* verdict */
+.verdict{margin:18px 0 8px;display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:center;border-bottom:1px solid var(--rule);padding-bottom:14px}
+.verdict .lab{background:var(--ink);color:var(--paper);font-family:'Noto Sans KR',sans-serif;font-weight:900;font-size:13px;padding:10px 12px;writing-mode:horizontal-tb;letter-spacing:.15em}
+.verdict p{margin:0;font-family:'Noto Serif KR',serif;font-weight:700;font-size:clamp(19px,2.2vw,26px);line-height:1.45}
+/* grid */
+.front{display:grid;grid-template-columns:2.1fr 1fr;gap:0 30px;margin-top:14px}
+.front>.lead{border-right:1px solid var(--rule);padding-right:30px}
+.label{font-family:'Noto Sans KR',sans-serif;font-weight:900;font-size:12px;letter-spacing:.18em;color:var(--accent);text-transform:uppercase;border-top:4px solid var(--ink);padding-top:6px;margin-bottom:8px;display:flex;justify-content:space-between}
+.label span{color:var(--muted);font-weight:500;letter-spacing:0}
+h2.big{font-family:'Noto Serif KR',serif;font-weight:900;font-size:clamp(30px,4.6vw,58px);line-height:1.12;margin:4px 0 10px;letter-spacing:-.025em}
+.deck{font-family:'Noto Serif KR',serif;font-size:clamp(17px,1.7vw,21px);font-weight:500;color:#2c2721;margin:0 0 14px;padding-bottom:12px;border-bottom:1px solid #b9ae98}
+.byline{font-family:'Noto Sans KR',sans-serif;font-size:11.5px;color:var(--muted);margin-bottom:10px}
+.cols{column-count:2;column-gap:28px;column-rule:1px solid #c7bca6}
+.cols p:first-child::first-letter{float:left;font-family:'Noto Serif KR',serif;font-weight:900;font-size:62px;line-height:.9;padding:6px 8px 0 0;color:var(--accent)}
+.cols p{margin:0 0 10px;text-align:justify}
+ul.facts{list-style:none;padding:0;margin:0 0 10px}
+ul.facts li{padding:5px 0 5px 18px;position:relative;border-bottom:1px dotted #bdb29c;break-inside:avoid}
+ul.facts li:before{content:'■';position:absolute;left:0;top:6px;font-size:9px;color:var(--accent)}
+.tag{display:inline-block;font-family:'Noto Sans KR',sans-serif;font-size:10.5px;font-weight:700;padding:0 6px;border-radius:2px;margin-right:4px;vertical-align:2px;line-height:17px}
+.tag.done{background:var(--ink);color:var(--paper)}
+.tag.plan{border:1px solid var(--blue);color:var(--blue)}
+.tag.view{border:1px solid var(--muted);color:var(--muted)}
+figure.chart{margin:14px 0;border:1px solid var(--rule);padding:10px 12px;background:#f8f4ea;break-inside:avoid}
+figure.chart figcaption{font-family:'Noto Sans KR',sans-serif;font-size:11.5px;color:var(--muted);margin-top:6px}
+.bar{display:grid;grid-template-columns:96px 1fr 120px;gap:8px;align-items:center;font-family:'Noto Sans KR',sans-serif;font-size:12px;margin:5px 0}
+.bar i{display:block;height:13px;background:var(--ink)}
+.bar i.red{background:var(--accent)}
+.pull{font-family:'Noto Serif KR',serif;font-weight:700;font-size:22px;line-height:1.4;border-top:3px solid var(--ink);border-bottom:1px solid var(--ink);padding:12px 4px;margin:14px 0;text-align:center;break-inside:avoid}
+.pull:before{content:'“';display:block;font-size:54px;line-height:.5;color:var(--accent);padding-top:14px}
+.pull small{display:block;font-family:'Noto Sans KR',sans-serif;font-weight:400;font-size:11.5px;color:var(--muted);margin-top:6px}
+/* side */
+.side h3,.story h3{font-family:'Noto Serif KR',serif;font-weight:900;font-size:21px;line-height:1.3;margin:6px 0 6px;letter-spacing:-.01em}
+.side .item{padding:0 0 12px;margin-bottom:12px;border-bottom:1px solid #b9ae98}
+.side .item:last-child{border:0}
+.side p,.story p{margin:0 0 6px}
+.box{border:2px solid var(--ink);padding:12px 14px;background:#f8f4ea;position:relative}
+.box.dark{background:var(--ink);color:var(--paper)}
+.box.dark a{color:var(--paper);border-color:#7d7364}
+.box.dark .src{color:#c9bfae}
+.box .title{font-family:'Noto Sans KR',sans-serif;font-weight:900;font-size:13px;letter-spacing:.12em;border-bottom:1px solid currentColor;padding-bottom:5px;margin-bottom:8px}
+/* sections */
+.sec{margin-top:26px;border-top:3px double var(--rule);padding-top:4px}
+.sec-head{display:flex;align-items:baseline;gap:14px;margin:6px 0 12px;flex-wrap:wrap}
+.sec-head h2{font-family:'Noto Serif KR',serif;font-weight:900;font-size:30px;margin:0;letter-spacing:-.02em}
+.sec-head .no{font-family:'Playfair Display',serif;font-style:italic;font-size:30px;color:var(--accent)}
+.sec-head .sub{font-family:'Noto Sans KR',sans-serif;font-size:12px;color:var(--muted)}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
+.grid3>.story{padding:0 18px;border-left:1px solid #b9ae98}
+.grid3>.story:first-child{padding-left:0;border-left:0}
+.grid2{display:grid;grid-template-columns:1.25fr 1fr;gap:0}
+.grid2>*{padding:0 20px;border-left:1px solid #b9ae98}
+.grid2>*:first-child{padding-left:0;border-left:0}
+.story .kick{font-family:'Noto Sans KR',sans-serif;font-size:11px;font-weight:700;color:var(--accent);letter-spacing:.1em}
+.xcard{border:1px solid var(--rule);padding:12px 14px;background:#fbf8f1;margin-bottom:14px;break-inside:avoid}
+.xcard .who{font-family:'Noto Sans KR',sans-serif;font-size:12.5px;font-weight:700;display:flex;justify-content:space-between;gap:8px}
+.xcard .who span{font-weight:400;color:var(--muted)}
+.xcard blockquote{margin:8px 0;padding-left:10px;border-left:3px solid var(--accent);font-style:italic;color:#3a342c;font-family:'Playfair Display','Noto Serif KR',serif;font-size:14.5px}
+.xcard .ko{font-weight:700}
+.xcard .easy{font-family:'Noto Sans KR',sans-serif;font-size:13.5px;background:var(--soft);padding:6px 9px;margin-top:6px}
+.xcard .easy b{color:var(--accent)}
+.xgrid{column-count:3;column-gap:22px}
+table.won{width:100%;border-collapse:collapse;font-family:'Noto Sans KR',sans-serif;font-size:12.5px;margin-top:6px}
+table.won td,table.won th{border-bottom:1px solid #b9ae98;padding:4px 3px;text-align:left}
+table.won th{border-bottom:2px solid var(--ink)}
+table.won td:last-child,table.won th:last-child{text-align:right}
+.unver{font-family:'Noto Sans KR',sans-serif;font-size:12.5px;border:1px dashed var(--muted);padding:10px 12px;margin-top:22px;color:#3a342c}
+footer{margin-top:22px;border-top:3px solid var(--ink);padding-top:8px;font-family:'Noto Sans KR',sans-serif;font-size:11.5px;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px}
+/* responsive */
+@media (max-width:980px){
+ .front{grid-template-columns:1fr}.front>.lead{border-right:0;padding-right:0}
+ .grid3{grid-template-columns:1fr 1fr}.grid3>.story:nth-child(3){grid-column:1/-1;padding-left:0;border-left:0;border-top:1px solid #b9ae98;padding-top:10px;margin-top:10px}
+ .xgrid{column-count:2}
+}
+@media (max-width:640px){
+ body{font-size:16.5px}
+ .sheet{margin:0;padding:14px 16px 28px;box-shadow:none}
+ .ears{display:block}.ear{display:none}
+ .mast .kicker{letter-spacing:.25em;font-size:10px}
+ .dateline{justify-content:center;text-align:center;font-size:12px}
+ .verdict{grid-template-columns:1fr;gap:8px}.verdict .lab{justify-self:start;padding:5px 10px}
+ .cols{column-count:1}
+ .grid3,.grid2{grid-template-columns:1fr}
+ .grid3>.story,.grid2>*{padding:12px 0 0;border-left:0;border-top:1px solid #b9ae98;margin-top:10px}
+ .grid3>.story:first-child,.grid2>*:first-child{border-top:0;margin-top:0;padding-top:0}
+ .xgrid{column-count:1}
+ .bar{grid-template-columns:78px 1fr 92px}
+ .sec-head h2{font-size:25px}
+ .pull{font-size:19px}
+}
+@media print{html{background:#fff}.sheet{box-shadow:none;margin:0;max-width:none}}
+</style></head><body>
+<div class="sheet">
+<header>
+ <div class="ears">
+  <div class="ear"><b>오늘의 숫자</b> · 751.5억 달러(약 100조 원)<br>9월 정보통신(ICT) 수출, 사상 첫 700억 달러 돌파</div>
+  <div class="mast">
+   <div class="kicker">김일론 대표 전용 · 아침 조간</div>
+   <h1>브리핑<span class="dot">·</span>데일리</h1>
+   <div class="en">The Briefing Daily — conclusion first, source next to every number</div>
+  </div>
+  <div class="ear"><b>환율 기준</b> · 1달러 = 1,337원<br>(10/14 유럽중앙은행 기준가, 본지 모든 원화 환산에 적용)</div>
+ </div>
+ <div class="dateline">
+  <span>서울 · 2026년 10월 15일 목요일</span>
+  <span class="c">제1호</span>
+  <span>취재 범위: 10/14 06시 ~ 10/15 05시(KST) · 발행 05:30</span>
+ </div>
+ <nav class="index">
+  <a href="#lead">오늘의 결론</a><a href="#ai">AI 회사 공식 소식</a><a href="#x">X 하이라이트</a><a href="#musk">머스크·테슬라·스페이스X</a><a href="#pol">국내 정치</a><a href="#policy">데이터·AI 정책·시장</a><a href="#tip">코딩 팁</a>
+ </nav>
+</header>
+
+<section class="verdict" id="lead">
+ <div class="lab">오늘의 결론</div>
+ <p>🔴 AI가 돈이 되는 곳이 숫자로 보입니다. 스페이스X는 음성 AI로 하루 2만 통의 상담 전화를 받고, 한국은 AI 반도체 덕에 한 달 ICT 수출이 100조 원을 넘었습니다. 다만 주식시장은 반도체를 6일째 팔고 있습니다.</p>
+</section>
+
+<div class="front">
+ <article class="lead">
+  <div class="label">1면 머리기사 · 머스크 AI <span>출처: SpaceXSI(구 xAI) 공식 발표 10/14(미국)</span></div>
+  <h2 class="big">Grok Voice 3.0 출시…<br>“스타링크 상담 전화 70%를 사람 없이 끝낸다”</h2>
+  <p class="deck">말로 듣고 말로 답하는 음성 AI의 새 판입니다. 외부 평가 1위를 받았고, 값은 그대로(1분에 약 107원)입니다.</p>
+  <div class="byline">브리핑 데일리 · 원문: <a href="https://x.ai/news/grok-voice-3">Introducing Grok Voice 3.0</a> · <a href="https://docs.x.ai/developers/release-notes">API 변경 기록</a></div>
+  <div class="cols">
+   <p>머스크의 AI 회사(이제 스페이스X 소속, SpaceXSI)가 10월 14일 음성 모델 Grok Voice 3.0을 냈습니다. 테슬라 차 안의 Grok과 Grok Bot 음성 모드가 이 모델로 돌아갑니다.</p>
+   <ul class="facts">
+    <li><span class="tag done">된 것</span>API 정식 출시. 값은 2.0과 같은 1분 0.08달러(약 107원), 1시간 4.80달러(약 6,418원) <span class="src"><a href="https://x.ai/news/grok-voice-3">SpaceXSI</a></span></li>
+    <li><span class="tag done">된 것</span>예전 2.0은 지원 종료 예고, 이름 「grok-voice-latest」는 3.0으로 자동 전환 <span class="src"><a href="https://docs.x.ai/developers/release-notes">API 변경 기록</a></span></li>
+    <li><span class="tag view">회사 주장</span>독립 평가기관 Artificial Analysis 음성 종합점수 86.9로 1위(OpenAI GPT-Live-1 83.2, 구글 Gemini 3.8 Live 82.6) <span class="src"><a href="https://x.ai/news/grok-voice-3">SpaceXSI</a></span></li>
+    <li><span class="tag view">회사 주장</span>스타링크 콜센터가 하루 2만 통을 이 모델로 응대, 약 70%는 사람 개입 없이 해결, 판매 전화 4통 중 1통은 통화 중 구매 <span class="src"><a href="https://x.ai/news/grok-voice-3">SpaceXSI</a></span></li>
+   </ul>
+   <figure class="chart">
+    <div class="bar"><span>Grok Voice 3.0</span><i class="red" style="width:100%"></i><span>86.9</span></div>
+    <div class="bar"><span>OpenAI GPT-Live-1</span><i style="width:95.7%"></i><span>83.2</span></div>
+    <div class="bar"><span>Gemini 3.8 Live</span><i style="width:95.1%"></i><span>82.6</span></div>
+    <div class="bar"><span>Grok Voice 2.0</span><i style="width:93.6%"></i><span>81.3</span></div>
+    <figcaption>Artificial Analysis 음성 대화 종합점수(10/13 측정). 막대는 1위 대비 비율. 출처: <a href="https://x.ai/news/grok-voice-3">SpaceXSI 발표 속 표</a></figcaption>
+   </figure>
+   <div class="pull">“Try Grok Voice”(Grok Voice 써 보세요)<small>일론 머스크, X 10/15 03:33 KST · <a href="https://x.com/elonmusk/status/2110438877274259488">원문</a></small></div>
+   <p><b>그래서 뭐가 달라지나.</b> 전화 상담을 AI에 맡기는 값이 1분 100원대로 내려왔다는 뜻입니다. 폴리뱃처럼 사람 손이 모자란 서비스는 「문의 전화 받는 AI」를 하루 안에 시험해 볼 수 있는 가격입니다.</p>
+  </div>
+ </article>
+
+ <aside class="side">
+  <div class="label">함께 볼 소식 <span>AI 회사 공식</span></div>
+  <div class="item">
+   <div class="story"><span class="kick">Anthropic · Claude Code</span></div>
+   <h3>Claude Code 데스크톱, 여러 작업 동시에 돌리기 쉬워져</h3>
+   <ul class="facts">
+    <li><span class="tag done">된 것</span>세션 시작이 빨라지고, 일을 여러 세션에 나누기 쉬워졌으며, 각 세션이 뭘 하는지 늘 보이게 바뀜 <span class="src"><a href="https://x.com/ClaudeDevs/status/2110445844675838148">ClaudeDevs X</a></span></li>
+    <li>개발자 Thariq: “거의 2판이라고 본다” <span class="src"><a href="https://x.com/trq212/status/2110463962877989276">X 원문</a></span></li>
+   </ul>
+  </div>
+  <div class="item">
+   <div class="story"><span class="kick">Anthropic · 선거</span></div>
+   <h3>미국 중간선거 대비책 공개: “누구 찍을지 묻는 대화는 0.01%”</h3>
+   <ul class="facts">
+    <li><span class="tag done">된 것</span>미국 Claude 대화 25만 건 분석: 정치·정책 관련 5.75%, 선거·투표 0.51%, 투표 대상 추천 요청 약 0.01% <span class="src"><a href="https://www.anthropic.com/news/2026-us-midterms">Anthropic</a></span></li>
+    <li><span class="tag plan">계획</span>이달 말부터 주별 공식 투표 정보를 답에 바로 넣고, 개표 당일엔 최신 공식 결과 표시 <span class="src"><a href="https://www.anthropic.com/news/2026-us-midterms">Anthropic</a></span></li>
+   </ul>
+  </div>
+  <div class="box dark">
+   <div class="title">원화 환산표 · 오늘 나온 달러 숫자</div>
+   <table class="won">
+    <tr><th>항목</th><th>원화(1,337원/$)</th></tr>
+    <tr><td>9월 ICT 수출 751.5억$</td><td>약 100조 원</td></tr>
+    <tr><td>그중 반도체 603.3억$</td><td>약 80.7조 원</td></tr>
+    <tr><td>엔비디아 영국 5년 2.5억$</td><td>약 3,343억 원</td></tr>
+    <tr><td>Grok Voice 1분 0.08$</td><td>약 107원</td></tr>
+   </table>
+  </div>
+ </aside>
+</div>
+
+<section class="sec" id="ai">
+ <div class="sec-head"><span class="no">02</span><h2>AI 회사 공식 소식</h2><span class="sub">공식 블로그·변경 기록만 · 10/14~15</span></div>
+ <div class="grid3">
+  <article class="story">
+   <span class="kick">Claude 개발 플랫폼</span>
+   <h3>API·에이전트 작업 기록을 내 모니터링 도구로 보낸다</h3>
+   <ul class="facts">
+    <li><span class="tag done">된 것</span>OpenTelemetry(작업 추적 표준) 내보내기 베타 시작. Messages API와 Managed Agents 세션을 추적 <span class="src"><a href="https://platform.claude.com/docs/en/release-notes/overview#october-14-2026">Claude 변경 기록 10/14</a></span></li>
+    <li>Python·TypeScript·Go·Java 등 7개 언어 SDK 지원, Console에서 목적지만 추가 <span class="src"><a href="https://platform.claude.com/docs/en/release-notes/overview#october-14-2026">Claude</a></span></li>
+   </ul>
+  </article>
+  <article class="story">
+   <span class="kick">OpenAI · 유럽 보고서</span>
+   <h3>유럽 기업 AI 사용의 절반 넘게가 이미 「에이전트」</h3>
+   <ul class="facts">
+    <li><span class="tag view">회사 주장</span>EU 기업 고객 AI 사용의 절반 이상이 에이전트 도구, 소기업 사용자는 8배로 늘어 <span class="src"><a href="https://x.com/OpenAI/status/2110442001749659890">OpenAI X</a> · <a href="https://openai.com/index/the-eus-next-chapter-in-ai-is-agentic">보고서</a></span></li>
+    <li>같은 날 사례 3건: Amp(코딩 밖 업무), SentinelOne(악성코드 분석 몇 주→몇 시간), 에이전트 1만 개를 36시간 넘게 돌린 Third Moment <span class="src"><a href="https://openai.com/index/third-moment-research">OpenAI</a></span></li>
+   </ul>
+  </article>
+  <article class="story">
+   <span class="kick">NVIDIA · 구글</span>
+   <h3>엔비디아, 영국 AI 스타트업 5곳에 새 투자</h3>
+   <ul class="facts">
+    <li><span class="tag plan">계획</span>Boltz·Foresight·Hiverge·Prima Mente·Riverlane 투자 예정(금액 미공개). 영국 AI 안전 연구에 5년간 2.5억 달러(약 3,343억 원) 규모 컴퓨팅 지원 <span class="src"><a href="https://blogs.nvidia.com/blog/uk-ecosystem-deployment">NVIDIA</a></span></li>
+    <li>구글 딥마인드는 싱가포르 정부와 폰 안에서 도는 사기 탐지 AI 모델을 함께 만든다고 발표 <span class="src"><a href="https://deepmind.google/blog/on-device-ai-scam-detection-mddi">DeepMind</a></span></li>
+   </ul>
+   <div class="box" style="margin-top:10px"><div class="title">새 발표 없음</div><p style="font-size:14px;margin:0">Cursor, Microsoft·Copilot, Gemini API, OpenAI API, 국가AI전략위, 개인정보위, 국가데이터처, NIA</p></div>
+  </article>
+ </div>
+</section>
+
+<section class="sec" id="x">
+ <div class="sec-head"><span class="no">03</span><h2>X 하이라이트</h2><span class="sub">대표님이 팔로우하는 계정 · 번역 + 쉬운 풀이</span></div>
+ <div class="xgrid">
+  <div class="xcard">
+   <div class="who">ClaudeDevs <span>@ClaudeDevs · 10/15 04:01</span></div>
+   <blockquote>“We've been working hard on making the Claude Code desktop app great for running lots of sessions side by side.”</blockquote>
+   <div class="ko">“Claude Code 데스크톱 앱을, 여러 세션을 나란히 돌리기 좋게 만드는 데 공을 들였습니다.”</div>
+   <ul class="facts" style="margin-top:6px"><li>좋아요 약 7천, 북마크 1,572 <span class="src"><a href="https://x.com/ClaudeDevs/status/2110445844675838148">X 원문</a></span></li></ul>
+   <div class="easy"><b>쉽게:</b> 한 창에서 한 가지씩 시키던 걸, 여러 창에 일을 나눠 맡기고 한눈에 지켜보는 쪽으로 바뀐다는 얘기입니다. 아래 07번 팁으로 바로 써 볼 수 있습니다.</div>
+  </div>
+  <div class="xcard">
+   <div class="who">Paul Graham <span>@paulg · 10/14 12:09</span></div>
+   <blockquote>“It's not unusual for startups to grow 10x in a year, but to keep it up for 3 years is close to unheard of. That's 1000x.”</blockquote>
+   <div class="ko">“스타트업이 1년에 10배 크는 건 드물지 않다. 하지만 그걸 3년 이어 가는 건 거의 들어 본 적이 없다. 1000배다.”</div>
+   <ul class="facts" style="margin-top:6px"><li>어느 회사를 두고 한 말인지는 인용한 글을 확인하지 못함 <span class="src"><a href="https://x.com/paulg/status/2110206264764719249">X 원문</a></span></li></ul>
+   <div class="easy"><b>쉽게:</b> 첫해의 폭발보다 「3년 연속」이 훨씬 어렵다는 말입니다.</div>
+  </div>
+  <div class="xcard">
+   <div class="who">Tibo(OpenAI Codex) <span>@thsottiaux · 10/14 08:32</span></div>
+   <blockquote>“...reduce the amount stored on disk by 60%.”</blockquote>
+   <div class="ko">“ChatGPT·Codex 데스크톱 앱이 디스크에 저장하는 양을 60% 줄였습니다.”</div>
+   <ul class="facts" style="margin-top:6px"><li>작업을 많이 돌리는 사용자들의 디스크 부족 불만에 대한 대응 <span class="src"><a href="https://x.com/thsottiaux/status/2110151780478927344">X 원문</a></span></li></ul>
+   <div class="easy"><b>쉽게:</b> Claude Code와 Codex 모두 「여러 작업을 오래 돌리는 사람」에 맞춰 다듬고 있습니다.</div>
+  </div>
+ </div>
+</section>
+
+<div class="grid2" style="margin-top:26px">
+ <section class="sec" id="musk" style="margin-top:0">
+  <div class="sec-head"><span class="no">04</span><h2>머스크·테슬라·스페이스X</h2></div>
+  <article class="story">
+   <h3>🟠 새 로드스터, 내일(금) 아침 9시 55분 공개</h3>
+   <ul class="facts">
+    <li><span class="tag plan">계획</span>미국 10/15 저녁 7시 55분(텍사스), 한국 10/16(금) 09:55에 테슬라 X 계정으로 생중계 <span class="src"><a href="https://www.teslarati.com/tesla-roadster-livestream-waco-texas/">Teslarati</a> · <a href="https://electrek.co/2026/10/13/tesla-roadster-event-thursday-nine-years-delays/">Electrek</a></span></li>
+    <li><span class="tag view">머스크 주장</span>“시속 0→60마일 1초 안쪽”. 실제 성능·가격·생산 일정은 행사 전까지 미공개 <span class="src"><a href="https://www.teslarati.com/tesla-roadster-livestream-waco-texas/">Teslarati</a></span></li>
+    <li>테슬라 공식 계정: “내일 무슨 일 있나요?” <span class="src"><a href="https://x.com/Tesla/status/2110420241104953532">X 원문</a></span></li>
+   </ul>
+  </article>
+  <article class="story">
+   <h3>테슬라 3분기 실적 발표는 다음 주</h3>
+   <ul class="facts">
+    <li><span class="tag done">된 것</span>주주 질문 접수 시작 <span class="src"><a href="https://x.com/SawyerMerritt/status/2110379963627282902">Sawyer Merritt X</a></span></li>
+    <li><span class="tag plan">계획</span>2027년 오만 판매 시작, 현지 첫 채용 중 <span class="src"><a href="https://x.com/SawyerMerritt/status/2110393164909449616">Sawyer Merritt X</a></span></li>
+   </ul>
+  </article>
+ </section>
+ <section class="sec" id="pol" style="margin-top:0">
+  <div class="sec-head"><span class="no">05</span><h2>국내 정치·국회·대통령</h2><span class="sub">사실만 · 공식 출처 우선</span></div>
+  <article class="story">
+   <h3>이재명 대통령, 새 비서실장에 임광현 국세청장</h3>
+   <ul class="facts">
+    <li><span class="tag done">된 것</span>10/14 강훈식 비서실장이 직접 발표. 임 실장 “청와대의 하루도 절박해야” <span class="src"><a href="https://www.president.go.kr/briefings/Uxdwbcah">청와대 브리핑</a></span></li>
+    <li><span class="tag done">된 것</span>한성숙 국무총리 소속 경찰개혁위원회 출범, 민간위원 10명 위촉 <span class="src"><a href="https://www.korea.kr/briefing/pressReleaseView.do?newsId=156785224">정책브리핑</a> · <a href="https://x.com/han_seongsook/status/2110314042850201827">총리 X</a></span></li>
+   </ul>
+  </article>
+  <article class="story">
+   <h3>국정감사 2주차 쟁점 셋</h3>
+   <ul class="facts">
+    <li>복지위: 국민연금 「리밸런싱 유예」를 두고 여야 공방, 국민의힘은 김용범 전 정책실장 증인 요구 <span class="src"><a href="https://www.newsis.com/view/NISX20261014_0003826311">뉴시스</a></span></li>
+    <li>교육위: 국민의힘 박정훈 의원이 김민석 민주당 대표 아들 의혹 제기 <span class="src"><a href="https://www.yna.co.kr/view/AKR20261014149100001">연합뉴스</a></span></li>
+    <li>농해수위: 여야 모두 농지 전수조사로 인한 임차농 피해 우려 <span class="src"><a href="https://www.newsis.com/view/NISX20261014_0003826301">뉴시스</a></span></li>
+   </ul>
+  </article>
+ </section>
+</div>
+
+<section class="sec" id="policy">
+ <div class="sec-head"><span class="no">06</span><h2>한국 데이터·AI 정책 · 시장</h2><span class="sub">AI·데이터 관련만</span></div>
+ <div class="grid3">
+  <article class="story">
+   <span class="kick">과기정통부·산업부 · 수출</span>
+   <h3>9월 ICT 수출 751.5억 달러, 역대 최고</h3>
+   <ul class="facts">
+    <li><span class="tag done">된 것</span>수출 751.5억 달러(약 100조 원), 1년 전보다 195.8% 증가. 무역흑자 537.1억 달러(약 71.8조 원) <span class="src"><a href="https://www.msit.go.kr/bbs/view.do?bbsSeqNo=94&amp;mId=307&amp;mPid=208&amp;nttSeqNo=3187866&amp;sCode=user">과기정통부</a></span></li>
+    <li>반도체가 603.3억 달러(약 80.7조 원)로 ICT 수출의 80.3%. 나라 전체 수출의 62.1%가 ICT <span class="src"><a href="https://www.msit.go.kr/bbs/view.do?bbsSeqNo=94&amp;mId=307&amp;mPid=208&amp;nttSeqNo=3187866&amp;sCode=user">과기정통부 보도자료</a></span></li>
+   </ul>
+   <figure class="chart">
+    <div class="bar"><span>6월</span><i style="width:76%"></i><span>572.8억$</span></div>
+    <div class="bar"><span>7월</span><i style="width:71%"></i><span>533.5억$</span></div>
+    <div class="bar"><span>8월</span><i style="width:80%"></i><span>599.8억$</span></div>
+    <div class="bar"><span>9월</span><i class="red" style="width:100%"></i><span>751.5억$</span></div>
+    <figcaption>월별 ICT 수출. 출처: <a href="https://www.msit.go.kr/bbs/view.do?bbsSeqNo=94&amp;mId=307&amp;mPid=208&amp;nttSeqNo=3187866&amp;sCode=user">과기정통부</a></figcaption>
+   </figure>
+  </article>
+  <article class="story">
+   <span class="kick">해수부 · 공공데이터</span>
+   <h3>AI·공공데이터로 만든 어민 서비스 3종 출시</h3>
+   <ul class="facts">
+    <li><span class="tag done">된 것</span>사고 위험 알림(카카오 알림톡), 폐업 지원금 모의 계산기 「척척감척」, 양식장 약품 안내 「수산물 헬스케어 알리미」 <span class="src"><a href="https://www.korea.kr/briefing/pressReleaseView.do?newsId=156785079">정책브리핑</a></span></li>
+    <li>일부는 공무원이 AI로 직접 프로그램을 만들었다고 밝힘 <span class="src"><a href="https://www.korea.kr/briefing/pressReleaseView.do?newsId=156785079">해수부</a></span></li>
+   </ul>
+   <ul class="facts" style="margin-top:10px">
+    <li>산업부 「세계 표준의 날」 주제는 제조 AI 대전환(M.AX). 국표원 “AI 데이터·시스템 상호운용 표준 필수” <span class="src"><a href="https://www.korea.kr/briefing/pressReleaseView.do?newsId=156785091">정책브리핑</a></span></li>
+   </ul>
+  </article>
+  <article class="story">
+   <span class="kick">시장 · 10/14 마감</span>
+   <h3>수출은 기록, 반도체 주식은 6일째 하락</h3>
+   <ul class="facts">
+    <li>코스피 6,008.81(−0.44%), 6거래일 연속 하락. 장중 2%대 올랐다가 ASML 3분기 매출이 예상을 밑돈 뒤 꺾임 <span class="src"><a href="https://kr.investing.com/news/stock-market-news/article-2126270">Investing.com</a></span></li>
+    <li>SK하이닉스 141만 9천 원(−1.66%), 6일간 −22.92%. 삼성전자 23만 2천 원(보합). 외국인 1조 1,814억 원 순매도 <span class="src"><a href="https://stock.mk.co.kr/news/view/1174475">연합뉴스·매경</a></span></li>
+    <li>IMF, 올해 한국 성장률 전망 3.3%로 0.7%p 상향 <span class="src"><a href="https://x.com/han_seongsook/status/2110290401395675600">총리 X</a></span></li>
+   </ul>
+  </article>
+ </div>
+</section>
+
+<section class="sec" id="biz">
+ <div class="box" style="margin-top:12px">
+  <div class="title">👉 대표님 사업 메모 · 정치방망이에 닿는 오늘 소식 두 개</div>
+  <ul class="facts">
+   <li>Anthropic은 AI가 선거 정보를 다룰 때 「공식 출처 연결 + 투표 추천 안 함 + 개표 결과는 공식 숫자만」 세 가지를 원칙으로 공개했습니다. 정치방망이 기록검색의 안내 문구를 다듬을 때 그대로 비교해 볼 만한 기준입니다. <span class="src"><a href="https://www.anthropic.com/news/2026-us-midterms">Anthropic</a></span></li>
+   <li>GeekNews 소개 글: 한 서비스가 Hacker News에 소개된 뒤 몰려든 요청 대부분이 화면을 띄우지 않는 AI 수집 봇이었다는 사례. 공개 데이터 서비스는 홍보 직후 서버 부하를 따로 봐야 합니다. <span class="src"><a href="https://x.com/GeekNewsHada/status/2110197980183859333">GeekNews X</a></span></li>
+  </ul>
+ </div>
+</section>
+
+<section class="sec" id="tip">
+ <div class="box" style="margin-top:12px">
+  <div class="title">07 · 오늘의 AI 코딩 실무 팁 — “Claude Code 데스크톱에서 두 작업 나란히 돌리기”</div>
+  <div class="grid3">
+   <div class="story"><h3 style="font-size:18px">무엇</h3><p>Code 탭에서 Cmd+N(윈도우 Ctrl+N)으로 새 세션을 열고, 사이드바의 다른 세션을 Cmd(Ctrl)를 누른 채 클릭하면 화면이 둘로 나뉩니다. Cmd+\ 로 닫습니다. <span class="src"><a href="https://code.claude.com/docs/en/desktop">Claude Code 문서</a></span></p></div>
+   <div class="story"><h3 style="font-size:18px">왜</h3><p>한 세션이 테스트를 돌리는 동안 다른 세션에 다음 일을 시킬 수 있습니다. Git 프로젝트라면 「worktree」 옵션을 켜야 두 세션의 수정이 서로 섞이지 않습니다.</p></div>
+   <div class="story"><h3 style="font-size:18px">오늘 해볼 것</h3><p>한쪽엔 「버그 고치기」, 다른 쪽엔 「그 부분 테스트 코드 쓰기」를 맡겨 보세요. 끝나면 한 세션에게 다른 세션의 결과를 확인시키면 됩니다.</p></div>
+  </div>
+ </div>
+</section>
+
+<div class="unver"><b>이번 호에서 확인하지 못한 것</b> · ① 공식 소식 수집기의 xAI 뉴스 출처가 실패해서 Grok Voice 3.0은 x.ai 원문을 직접 확인했습니다. ChatGPT 릴리스 출처는 아직 연결되지 않았습니다. ② OpenAI 유럽 보고서 본문은 사이트가 막아 OpenAI X 글로만 확인했습니다. ③ 테슬라 3분기 실적 발표의 정확한 날짜는 공식 확인 전입니다. ④ 김지용 중수청장 후보자 인사청문회(10/14) 결과는 확인하지 못했습니다.</div>
+
+<footer>
+ <span>브리핑 데일리 · 제1호 · 김일론 대표 개인용 · 연예·스포츠·광고·소문 제외</span>
+ <span>모든 원화 = 1,337원/달러 환산 · 숫자 옆 출처 링크</span>
+</footer>
+</div>
+
+</body></html>
