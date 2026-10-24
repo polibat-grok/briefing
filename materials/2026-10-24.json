@@ -1,0 +1,149 @@
+{
+  "format": "aibat-bot-materials/1",
+  "bot": "briefing",
+  "date": "2026-10-24",
+  "updated_utc": "2026-10-24T07:19:45Z",
+  "items": [
+    {
+      "url": "https://openai.com/index/securing-our-frontier-model-training-environment",
+      "title": "Securing our frontier model training environment",
+      "source_name": "OpenAI",
+      "kind": "official"
+    },
+    {
+      "url": "https://x.com/OpenAI/status/2113718797505036665",
+      "title": "OpenAI 공식 X — 훈련 환경 보안 글 안내",
+      "source_name": "OpenAI (X)",
+      "kind": "x"
+    },
+    {
+      "url": "https://www.anthropic.com/research/alignment-assessment-ukaisi",
+      "title": "An alignment assessment of the UK AISI cybertesting incident",
+      "source_name": "Anthropic",
+      "kind": "official"
+    },
+    {
+      "url": "https://x.com/AnthropicAI/status/2113390212911083894",
+      "title": "Anthropic 공식 X — UK AISI 시험 사건 평가",
+      "source_name": "Anthropic (X)",
+      "kind": "x"
+    },
+    {
+      "url": "https://www.anthropic.com/research/formal-verification",
+      "title": "Anthropic 연구 — 형식 검증(formal verification)",
+      "source_name": "Anthropic",
+      "kind": "official"
+    },
+    {
+      "url": "https://x.com/claudeai/status/2113380122468454765",
+      "title": "Claude 공식 X 글",
+      "source_name": "Claude (X)",
+      "kind": "x"
+    },
+    {
+      "url": "https://platform.claude.com/docs/en/release-notes/overview",
+      "title": "Claude Platform release notes",
+      "source_name": "Anthropic",
+      "kind": "official"
+    },
+    {
+      "url": "https://blogs.nvidia.com/blog/kazakhstan-ai-compute-ecosystem",
+      "title": "Kazakhstan Expands Compute for Its AI Future",
+      "source_name": "NVIDIA",
+      "kind": "official"
+    },
+    {
+      "url": "https://x.com/OpenAIDevs/status/2113682848607780912",
+      "title": "OpenAI Devs 공식 X 글",
+      "source_name": "OpenAI Devs (X)",
+      "kind": "x"
+    },
+    {
+      "url": "https://openai.com/index/scaling-storage-one-billion-users-part-two",
+      "title": "Scaling storage for one billion users (part two)",
+      "source_name": "OpenAI",
+      "kind": "official"
+    },
+    {
+      "url": "https://x.com/icreatelife/status/2113637343790059941",
+      "title": "공개 X 글 (@icreatelife)",
+      "source_name": "X",
+      "kind": "x"
+    },
+    {
+      "url": "https://x.com/IterIntellectus/status/2113555273184940278",
+      "title": "grok bot is now integrated with XChat",
+      "source_name": "X",
+      "kind": "x"
+    },
+    {
+      "url": "https://pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS074&nttId=12590",
+      "title": "개인정보보호위원회 보도자료 — 대구 이노베이션 존",
+      "source_name": "개인정보보호위원회",
+      "kind": "official"
+    },
+    {
+      "url": "https://x.com/cursor_ai/status/2113661506634305834",
+      "title": "Cursor 공식 X — 컴퓨터 조작 기능",
+      "source_name": "Cursor (X)",
+      "kind": "x"
+    },
+    {
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.309",
+      "title": "Claude Code v2.1.309 release",
+      "source_name": "Anthropic (GitHub)",
+      "kind": "official"
+    },
+    {
+      "url": "https://learn.chatgpt.com/docs/changelog",
+      "title": "Codex changelog",
+      "source_name": "OpenAI",
+      "kind": "official"
+    },
+    {
+      "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
+      "title": "ChatGPT release notes",
+      "source_name": "OpenAI",
+      "kind": "official"
+    },
+    {
+      "url": "https://gemini.google/release-notes/",
+      "title": "Gemini app release notes",
+      "source_name": "Google",
+      "kind": "official"
+    },
+    {
+      "url": "https://docs.x.ai/developers/release-notes",
+      "title": "Grok API release notes",
+      "source_name": "xAI",
+      "kind": "official"
+    }
+  ],
+  "sources": [
+    {
+      "name": "OpenAI",
+      "home": "https://openai.com/news/",
+      "kind": "official"
+    },
+    {
+      "name": "Anthropic",
+      "home": "https://www.anthropic.com/news",
+      "kind": "official"
+    },
+    {
+      "name": "NVIDIA",
+      "home": "https://blogs.nvidia.com/",
+      "kind": "official"
+    },
+    {
+      "name": "xAI",
+      "home": "https://docs.x.ai/developers/release-notes",
+      "kind": "official"
+    },
+    {
+      "name": "개인정보보호위원회",
+      "home": "https://www.pipc.go.kr/",
+      "kind": "official"
+    }
+  ]
+}
