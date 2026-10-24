@@ -123,27 +123,27 @@
     {
       "name": "OpenAI",
       "home": "https://openai.com/news/",
-      "kind": "official"
+      "kind": "company"
     },
     {
       "name": "Anthropic",
       "home": "https://www.anthropic.com/news",
-      "kind": "official"
+      "kind": "company"
     },
     {
       "name": "NVIDIA",
       "home": "https://blogs.nvidia.com/",
-      "kind": "official"
+      "kind": "company"
     },
     {
       "name": "xAI",
       "home": "https://docs.x.ai/developers/release-notes",
-      "kind": "official"
+      "kind": "company"
     },
     {
       "name": "개인정보보호위원회",
       "home": "https://www.pipc.go.kr/",
-      "kind": "official"
+      "kind": "gov"
     }
   ]
 }
