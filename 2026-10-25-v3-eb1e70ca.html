@@ -1,0 +1,605 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>브리핑 데일리 · 2026년 10월 25일 일요일 · 제8호</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Noto+Sans+KR:wght@400;500;700;900&family=Noto+Serif+KR:wght@500;700;900&family=Playfair+Display:ital,wght@1,500&display=swap" rel="stylesheet">
+<style>
+/* 브리핑 데일리 · v3 (2026-10-16, 제2호 피드백 반영) */
+:root{--paper:#f4efe4;--paper2:#f8f4ea;--ink:#16130f;--muted:#5c554b;--rule:#1d1a16;--accent:#a3201b;--soft:#e8e0cf;--blue:#1f3b57;
+ --ok:#2f7d4f;--slow:#d9822b;--down:#c0392b;--line:#b9ae98;--sans:'Noto Sans KR',system-ui,sans-serif;--serif:'Noto Serif KR','Nanum Myeongjo',serif}
+*{box-sizing:border-box}
+html{background:#d9d2c3;-webkit-text-size-adjust:100%}
+body{margin:0;color:var(--ink);font-family:'Nanum Myeongjo','Noto Serif KR',serif;font-size:16px;line-height:1.72;word-break:keep-all;overflow-wrap:break-word}
+.sheet{max-width:1240px;margin:24px auto;background:var(--paper);padding:26px 38px 40px;box-shadow:0 2px 0 #c9c0ad,0 18px 50px rgba(40,30,10,.25);
+ background-image:radial-gradient(rgba(120,100,60,.06) 1px,transparent 1px);background-size:4px 4px}
+a{color:inherit;text-decoration:none;border-bottom:1px dotted #8a7f6d}
+a:hover{color:var(--accent)}
+a[target=_blank]:not(.nx)::after{content:'↗';font-family:var(--sans);font-size:.7em;margin-left:1px;color:var(--muted);border:0}
+.src{font-family:var(--sans);font-size:11.5px;color:var(--muted);white-space:nowrap}
+.src a{border-bottom:1px solid #b7ab95}
+code{font-family:ui-monospace,Menlo,monospace;font-size:.86em;background:var(--soft);padding:0 4px;border-radius:2px;word-break:break-all}
+/* masthead */
+.ears{display:flex;justify-content:space-between;align-items:center;font-family:var(--sans);font-size:11.5px;color:var(--muted);gap:12px}
+.ear{border:1px solid var(--rule);padding:6px 10px;max-width:260px;line-height:1.45;background:var(--paper2)}
+.ear b{color:var(--accent)}
+.mast{text-align:center;padding:6px 0 4px}
+.mast .kicker{font-family:var(--sans);letter-spacing:.5em;font-size:11px;color:var(--muted)}
+.mast h1{font-family:var(--serif);font-weight:900;font-size:clamp(46px,9vw,112px);line-height:1;margin:6px 0 4px;letter-spacing:-.02em}
+.mast h1 .dot{color:var(--accent)}
+.mast .en{font-family:'Playfair Display',serif;font-style:italic;font-size:15px;color:var(--muted);letter-spacing:.08em}
+.dateline{display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px 18px;border-top:3px double var(--rule);border-bottom:1px solid var(--rule);padding:7px 2px;margin-top:10px;font-family:var(--sans);font-size:12.5px;font-weight:500}
+.dateline .c{font-weight:700}
+.dateline .rt{background:var(--ink);color:var(--paper);padding:0 8px;border-radius:2px;font-weight:700}
+.index{display:flex;flex-wrap:wrap;gap:4px 16px;justify-content:center;font-family:var(--sans);font-size:12px;padding:6px 0;border-bottom:3px solid var(--rule)}
+.index a{border:0}.index a:before{content:'▸ ';color:var(--accent)}
+/* 오늘의 5 */
+.five{margin:16px 0 4px;border:2px solid var(--ink);background:var(--paper2);padding:10px 14px 8px}
+.five .h{font-family:var(--sans);font-weight:900;font-size:13px;letter-spacing:.14em;color:var(--accent);display:flex;justify-content:space-between;gap:8px}
+.five .h span{color:var(--muted);font-weight:500;letter-spacing:0}
+.five ol{margin:6px 0 0;padding:0;list-style:none;counter-reset:f;display:grid;grid-template-columns:repeat(5,1fr);gap:0}
+.five li{counter-increment:f;padding:4px 12px 6px;border-left:1px solid var(--line);font-family:var(--sans);font-size:13.5px;line-height:1.45}
+.five li:first-child{border-left:0;padding-left:0}
+.five li:before{content:counter(f);display:block;font-family:'Playfair Display',serif;font-style:italic;font-size:24px;line-height:1.1;color:var(--accent)}
+.five li a{border:0;font-weight:700}
+/* verdict */
+.verdict{margin:16px 0 8px;display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:center;border-bottom:1px solid var(--rule);padding-bottom:14px}
+.verdict .lab{background:var(--ink);color:var(--paper);font-family:var(--sans);font-weight:900;font-size:13px;padding:10px 12px;letter-spacing:.15em}
+.verdict p{margin:0;font-family:var(--serif);font-weight:700;font-size:clamp(19px,2.2vw,26px);line-height:1.45}
+/* grid */
+.front{display:grid;grid-template-columns:2.1fr 1fr;gap:0 30px;margin-top:14px}
+.front>.leadcol{border-right:1px solid var(--rule);padding-right:30px;min-width:0}
+.sublead{margin-top:22px;padding-top:12px;border-top:4px solid var(--ink)}
+.sublead h3{font-size:26px}
+.front>.side{min-width:0}
+.label{font-family:var(--sans);font-weight:900;font-size:12px;letter-spacing:.18em;color:var(--accent);border-top:4px solid var(--ink);padding-top:6px;margin-bottom:8px;display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap}
+.label span{color:var(--muted);font-weight:500;letter-spacing:0}
+h2.big{font-family:var(--serif);font-weight:900;font-size:clamp(30px,4.6vw,56px);line-height:1.14;margin:4px 0 10px;letter-spacing:-.025em}
+.deck{font-family:var(--serif);font-size:clamp(17px,1.7vw,21px);font-weight:500;color:#2c2721;margin:0 0 14px;padding-bottom:12px;border-bottom:1px solid var(--line)}
+.cols{column-count:2;column-gap:28px;column-rule:1px solid #c7bca6}
+.cols>*{break-inside:avoid}
+.cols>p:first-child:not(.ax)::first-letter{float:left;font-family:var(--serif);font-weight:900;font-size:62px;line-height:.9;padding:6px 8px 0 0;color:var(--accent)}
+.cols p{margin:0 0 10px;text-align:justify}
+/* Axios-style bold labels */
+.ax{margin:0 0 9px}
+.ax>b:first-child{font-family:var(--sans);font-weight:900;color:var(--accent);font-size:.92em;margin-right:4px}
+.ax>b:first-child:after{content:' ·'}
+.ax.but{background:var(--soft);padding:7px 10px;border-left:3px solid var(--muted);font-size:.95em;text-align:left!important}
+.ax.but>b:first-child{color:var(--muted)}
+ul.facts{list-style:none;padding:0;margin:0 0 10px}
+ul.facts li{padding:5px 0 5px 18px;position:relative;border-bottom:1px dotted #bdb29c;break-inside:avoid}
+ul.facts li:before{content:'■';position:absolute;left:0;top:6px;font-size:9px;color:var(--accent)}
+.tag{display:inline-block;font-family:var(--sans);font-size:10.5px;font-weight:700;padding:0 6px;border-radius:2px;margin-right:4px;vertical-align:2px;line-height:17px}
+.tag.done{background:var(--ink);color:var(--paper)}
+.tag.plan{border:1px solid var(--blue);color:var(--blue)}
+.tag.view{border:1px solid var(--muted);color:var(--muted)}
+.pull{font-family:var(--serif);font-weight:700;font-size:21px;line-height:1.4;border-top:3px solid var(--ink);border-bottom:1px solid var(--ink);padding:12px 4px;margin:14px 0;text-align:center;break-inside:avoid}
+.pull:before{content:'“';display:block;font-size:54px;line-height:.5;color:var(--accent);padding-top:14px}
+.pull .ko{display:block;font-size:16px;font-weight:500;margin-top:6px;color:#2c2721}
+.pull small{display:block;font-family:var(--sans);font-weight:400;font-size:11.5px;color:var(--muted);margin-top:6px}
+/* side / stories */
+.side h3,.story h3{font-family:var(--serif);font-weight:900;font-size:21px;line-height:1.3;margin:6px 0 6px;letter-spacing:-.01em}
+.side .item{padding:0 0 14px;margin-bottom:14px;border-bottom:1px solid var(--line)}
+.side .item:last-child{border:0}
+.side p,.story p{margin:0 0 8px}
+.kick{font-family:var(--sans);font-size:11px;font-weight:700;color:var(--accent);letter-spacing:.1em;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.srcn{display:inline-block;font-family:var(--sans);font-size:10.5px;font-weight:700;letter-spacing:0;color:var(--muted);border:1px solid var(--line);border-radius:10px;padding:0 7px;line-height:17px;background:#fffdf7}
+.box{border:2px solid var(--ink);padding:12px 14px;background:var(--paper2);position:relative}
+.box .title{font-family:var(--sans);font-weight:900;font-size:13px;letter-spacing:.12em;border-bottom:1px solid currentColor;padding-bottom:5px;margin-bottom:8px}
+.box.dark{background:var(--ink);color:var(--paper)}
+.box.dark a{color:var(--paper);border-color:#7d7364}
+/* sections */
+.sec{margin-top:28px;border-top:3px double var(--rule);padding-top:4px}
+.sec-head{display:flex;align-items:baseline;gap:14px;margin:6px 0 12px;flex-wrap:wrap}
+.sec-head h2{font-family:var(--serif);font-weight:900;font-size:30px;margin:0;letter-spacing:-.02em}
+.sec-head .no{font-family:'Playfair Display',serif;font-style:italic;font-size:30px;color:var(--accent)}
+.sec-head .sub{font-family:var(--sans);font-size:12px;color:var(--muted)}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
+.grid3>.story{padding:0 18px;border-left:1px solid var(--line);min-width:0}
+.grid3>.story:first-child{padding-left:0;border-left:0}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:0}
+.grid2>*{padding:0 20px;border-left:1px solid var(--line);min-width:0}
+.grid2>*:first-child{padding-left:0;border-left:0}
+.xq{margin:8px 0;padding:8px 10px 8px 12px;border-left:3px solid var(--accent);background:#fbf8f1}
+.xq .who{font-family:var(--sans);font-size:12px;font-weight:700}
+.xq .who span{font-weight:400;color:var(--muted)}
+.xq blockquote{margin:4px 0;font-style:italic;color:#3a342c;font-family:'Playfair Display','Noto Serif KR',serif;font-size:14.5px}
+.xq .ko{font-weight:700;font-size:15px}
+/* 탭 설명: 용어(.t) + 인물·회사·기관·사건(.t.who) */
+.t{font:inherit;color:inherit;background:none;border:0;padding:0;margin:0;cursor:pointer;-webkit-tap-highlight-color:rgba(163,32,27,.15);
+ border-bottom:1.5px dashed var(--accent);color:#7d1813;font-weight:700;line-height:inherit;text-align:inherit}
+.t.who{border-bottom:1.5px dotted var(--blue);color:var(--blue)}
+.t:after{content:'ⓘ';font-family:var(--sans);font-size:.62em;vertical-align:.45em;margin-left:1px;opacity:.75}
+.t[aria-expanded=true]{background:rgba(163,32,27,.08)}
+.t.who[aria-expanded=true]{background:rgba(31,59,87,.08)}
+.tdef{display:block;margin:6px 0 8px;padding:9px 30px 9px 11px;background:#fffdf7;border:1px solid var(--line);border-left:4px solid var(--accent);
+ font-family:var(--sans);font-size:13.5px;line-height:1.6;font-weight:400;color:#2c2721;font-style:normal;text-align:left;position:relative;text-indent:0;letter-spacing:0;box-shadow:0 2px 8px rgba(40,30,10,.08)}
+.tdef.who{border-left-color:var(--blue)}
+.tdef b.k{display:inline-block;font-size:10.5px;font-weight:700;letter-spacing:.08em;color:var(--paper);background:var(--accent);padding:0 6px;border-radius:2px;margin-right:6px;line-height:17px;vertical-align:1px}
+.tdef.who b.k{background:var(--blue)}
+.tdef .x{position:absolute;right:4px;top:3px;border:0;background:none;font-size:18px;line-height:1;color:var(--muted);cursor:pointer;padding:4px 6px}
+/* 원문 보기 */
+.origin{margin:14px 0 4px;border:1.5px solid var(--ink);background:#fffdf7;font-family:var(--sans);font-size:13px;break-inside:avoid}
+.origin .oh{display:flex;justify-content:space-between;align-items:center;gap:8px;background:var(--ink);color:var(--paper);padding:5px 10px;font-weight:900;font-size:12px;letter-spacing:.12em}
+.origin .oh span{font-weight:400;letter-spacing:0;opacity:.8;font-size:11px}
+.origin .row{padding:8px 10px;border-top:1px dotted var(--line)}
+.origin .row:first-of-type{border-top:0}
+.origin .lk{display:block;font-weight:700;line-height:1.45}
+.origin .lk a{border-bottom:1px solid var(--accent)}
+.origin .url{display:block;color:var(--muted);font-size:11px;word-break:break-all;margin-top:1px}
+.origin .btns{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+.cp{font-family:var(--sans);font-size:12.5px;font-weight:700;border:1px solid var(--ink);background:var(--paper2);color:var(--ink);padding:7px 11px;border-radius:3px;cursor:pointer;min-height:36px;-webkit-tap-highlight-color:transparent}
+.cp:active{transform:translateY(1px)}
+.cp.ok{background:var(--ok);border-color:var(--ok);color:#fff}
+.replay{display:inline-block;margin-top:6px;font-weight:700;color:var(--accent)}
+/* 감 잡기 */
+.gam{margin:14px 0;border:1px solid var(--rule);background:var(--paper2);padding:10px 12px;break-inside:avoid;font-family:var(--sans)}
+.gam .gh{font-size:11.5px;font-weight:900;letter-spacing:.14em;color:var(--accent)}
+.gam .big{font-family:var(--serif);font-weight:900;font-size:22px;line-height:1.3;margin:2px 0 6px}
+.gam .vis{display:flex;flex-wrap:wrap;gap:3px;margin:6px 0;align-items:flex-end}
+.gam .vis i{display:block;width:14px;height:19px;background:#fff;border:1px solid #8a7f6d;box-shadow:1px 1px 0 #c9c0ad}
+.gam .vis i.bk{width:11px;height:26px;background:var(--blue);border-color:var(--blue)}
+.gam .vis i.part{opacity:.4}
+.gam .vis i.m{width:12px;height:12px;background:var(--accent);border-color:var(--accent);box-shadow:none;border-radius:2px}
+.gam .vis em{font-style:normal;font-size:11px;color:var(--muted);margin-left:4px}
+.gam .meter{height:12px;background:#e4dccb;border:1px solid #8a7f6d;position:relative;margin:6px 0 2px}
+.gam .meter b{position:absolute;left:0;top:0;bottom:0;background:var(--accent);min-width:2px}
+.gam ul{margin:4px 0 0;padding:0;list-style:none;font-size:13px}
+.gam li{padding:3px 0;border-top:1px dotted var(--line)}
+.gam li b{color:var(--ink)}
+.gam .cite{font-size:11px;color:var(--muted);margin-top:6px;line-height:1.5}
+/* 비교표 */
+.cmp{margin:12px 0;break-inside:avoid;font-family:var(--sans)}
+.cmp .ch{font-size:11.5px;font-weight:900;letter-spacing:.14em;color:var(--accent);margin-bottom:4px}
+.cmp table{width:100%;border-collapse:collapse;font-size:13px;background:#fffdf7;table-layout:fixed}
+.cmp th,.cmp td{border-bottom:1px solid var(--line);padding:6px 6px;text-align:left;vertical-align:top}
+.cmp thead th{border-bottom:2px solid var(--ink);font-weight:900;font-size:12.5px}
+.cmp thead th.hl,.cmp td.hl{background:rgba(163,32,27,.07)}
+.cmp tbody th{font-weight:700;color:var(--muted);font-size:12px;width:28%}
+.cmp .cite{font-size:11px;color:var(--muted);margin-top:4px}
+/* 서비스 관제 */
+.mon{border:2px solid var(--ink);background:#fffdf7;padding:12px 14px;font-family:var(--sans)}
+.mon .mh{display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px;font-size:12px;color:var(--muted);margin-bottom:8px}
+.mon .mh b{color:var(--ink);font-size:13px}
+.mon .lg{display:flex;gap:12px;flex-wrap:wrap;font-size:11.5px}
+.mon .lg i{display:inline-block;width:12px;height:10px;margin-right:4px;vertical-align:0}
+.mrow{display:grid;grid-template-columns:86px 1fr 74px;gap:8px;align-items:center;margin:5px 0;font-size:12.5px}
+.mrow .nm{font-weight:700}
+.mrow .st{font-size:11.5px;text-align:right;color:var(--muted)}
+.mrow .st.bad{color:var(--slow);font-weight:700}.mrow .st.down{color:var(--down);font-weight:700}
+.track{position:relative;height:18px;background:var(--ok);border-radius:2px;overflow:hidden}
+.track .seg{position:absolute;top:0;bottom:0;min-width:3px}
+.track .seg.slow{background:var(--slow)}.track .seg.down{background:var(--down)}
+.track .seg.info{background:repeating-linear-gradient(45deg,var(--slow) 0 4px,#f0b878 4px 8px)}
+.track .seg.future{background:#cfc8b8}
+.track .seg.slow.ongo,.track .seg.down.ongo{background-image:linear-gradient(90deg,transparent 80%,rgba(255,255,255,.35))}
+.ticks{display:grid;grid-template-columns:86px 1fr 74px;gap:8px;font-size:10.5px;color:var(--muted)}
+.ticks .sc{position:relative;height:14px}
+.ticks .sc span{position:absolute;transform:translateX(-50%)}
+.ticks .sc span:first-child{transform:none}.ticks .sc span:last-child{transform:translateX(-100%)}
+.ilist{margin:10px 0 0;padding:0;list-style:none;font-size:13px}
+.ilist li{padding:7px 0;border-top:1px dotted var(--line)}
+.ilist .when{font-weight:700}
+.ilist .en{display:block;color:var(--muted);font-size:11.5px}
+.mon .empty{padding:12px;text-align:center;color:var(--muted);border:1px dashed var(--line);font-size:13px}
+/* 도구 업데이트 */
+.tools .row{padding:9px 0;border-bottom:1px dotted #bdb29c;font-family:var(--sans);font-size:14px}
+.tools .row .when{color:var(--muted);font-size:11.5px}
+.tools ol{margin:4px 0 0;padding-left:20px}
+/* 용어 사전 */
+.glossary .gcols{display:grid;grid-template-columns:1fr 1fr;gap:0 28px}
+.glossary h4{font-family:var(--sans);font-size:12px;letter-spacing:.14em;color:var(--accent);margin:6px 0 4px;break-after:avoid}
+.glossary details{border-bottom:1px dotted var(--line);padding:6px 0;font-family:var(--sans);break-inside:avoid}
+.glossary details>summary{cursor:pointer;font-weight:700;font-size:14.5px;list-style:none;padding:2px 0}
+.glossary details>summary::-webkit-details-marker{display:none}
+.glossary details>summary:before{content:'▸ ';color:var(--accent)}
+.glossary details[open]>summary:before{content:'▾ '}
+.glossary .def{padding:4px 0 8px 18px;font-size:13.5px;color:#2c2721;line-height:1.6}
+footer{margin-top:22px;border-top:3px solid var(--ink);padding-top:8px;font-family:var(--sans);font-size:11.5px;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px}
+.toast{position:fixed;left:50%;bottom:22px;transform:translateX(-50%) translateY(20px);background:var(--ink);color:var(--paper);font-family:var(--sans);font-size:13px;padding:9px 14px;border-radius:20px;opacity:0;transition:.2s;pointer-events:none;z-index:9;max-width:90vw;text-align:center}
+.toast.on{opacity:1;transform:translateX(-50%) translateY(0)}
+/* responsive */
+@media (max-width:980px){
+ .front{grid-template-columns:1fr}.front>.leadcol{border-right:0;padding-right:0}
+ .front>.side{margin-top:18px}
+ .grid3{grid-template-columns:1fr 1fr}.grid3>.story:nth-child(3){grid-column:1/-1;padding-left:0;border-left:0;border-top:1px solid var(--line);padding-top:10px;margin-top:10px}
+ .five ol{grid-template-columns:1fr;gap:0}.five li{border-left:0;padding:5px 0;border-top:1px dotted var(--line);display:flex;gap:10px;align-items:baseline}
+ .five li:first-child{border-top:0}.five li:before{display:inline;font-size:20px;min-width:16px}
+}
+@media (max-width:640px){
+ body{font-size:16.5px}
+ .sheet{margin:0;padding:14px 16px 28px;box-shadow:none}
+ .ears{display:block}.ear{display:none}
+ .mast .kicker{letter-spacing:.25em;font-size:10px}
+ .mast .en{font-size:12px;letter-spacing:.02em}
+ .dateline{justify-content:center;text-align:center;font-size:12px}
+ .verdict{grid-template-columns:1fr;gap:8px}.verdict .lab{justify-self:start;padding:5px 10px}
+ .cols{column-count:1}.cols>p:first-child:not(.ax)::first-letter{font-size:52px}
+ .cols p{text-align:left}
+ .grid3,.grid2{grid-template-columns:1fr}
+ .grid3>.story,.grid2>*{padding:14px 0 0;border-left:0;border-top:1px solid var(--line);margin-top:12px}
+ .grid3>.story:first-child,.grid2>*:first-child{border-top:0;margin-top:0;padding-top:0}
+ .grid3>.story:nth-child(3){padding-top:14px;margin-top:12px}
+ .sec-head h2{font-size:25px}
+ .pull{font-size:18px}
+ .glossary .gcols{grid-template-columns:1fr}
+ .mrow,.ticks{grid-template-columns:64px 1fr 58px;gap:6px}
+ .mrow{font-size:12px}
+ .cmp table{font-size:12.5px}
+ .index{font-size:12.5px;gap:4px 12px}
+}
+@media print{html{background:#fff}.sheet{box-shadow:none;margin:0;max-width:none}.cp{display:none}}
+.pair{margin-top:28px;grid-template-columns:1fr 1.15fr}
+.pair>.sec{margin-top:0}
+@media (max-width:820px){.pair{grid-template-columns:1fr}.pair>*{padding:0;border-left:0}.pair>.sec+.sec{margin-top:28px;padding-top:4px;border-top:3px double var(--rule)}}
+@media (min-width:981px){.lead .origin{display:grid;grid-template-columns:repeat(3,1fr)}.lead .origin .oh{grid-column:1/-1}.lead .origin .row{border-top:0;border-left:1px dotted var(--line)}.lead .origin .row:first-of-type{border-left:0}}
+/* v4 (10/17 제3호 피드백) — 원문 링크와 'AI에 물어보기'를 분리 */
+.origin .olinks{list-style:none;margin:0;padding:4px 10px 8px}
+.origin .olinks li{padding:6px 0;border-top:1px dotted var(--line);font-weight:700;line-height:1.45}
+.origin .olinks li:first-child{border-top:0}
+.origin .olinks a{border-bottom:1px solid var(--accent)}
+.origin .askai{border-top:1.5px dashed var(--blue);background:#f2f6fb;padding:0 10px 8px}
+.origin .askai>summary{cursor:pointer;list-style:none;padding:8px 0;font-weight:900;color:var(--blue);font-size:12.5px}
+.origin .askai>summary::-webkit-details-marker{display:none}
+
+.origin .askai>summary span{display:block;font-weight:400;color:var(--muted);font-size:11px}
+.origin .ask{padding:6px 0;border-top:1px dotted #c9d6e6}
+.origin .ask .who{display:block;font-size:12px;font-weight:700}
+.origin .ask .to{display:block;font-size:11px;color:var(--muted)}
+.origin .ask .btns{display:flex;flex-wrap:wrap;gap:6px;margin-top:5px}
+.origin .ask .cp{border-color:var(--blue);color:var(--blue);background:#fff}
+.origin .ask .cp:before{content:'📋 '}
+.origin .ask.x .to b{color:#000}
+.origin .ask .cp.grok{border-color:#000;color:#000}
+.origin .xnote{font-size:11.5px;color:#2c2721;margin:6px 0 0;line-height:1.5}
+@media (min-width:981px){.lead .origin{display:block}}
+/* 과금 종류 표시 */
+.bill{display:inline-block;font-family:var(--sans);font-size:10.5px;font-weight:700;padding:0 6px;border-radius:9px;margin:0 4px;vertical-align:1px;line-height:17px}
+.bill.sub{background:#e3f1e6;color:#1d6b33;border:1px solid #9cc9a8}
+.bill.extra{background:#fdecea;color:#a2281c;border:1px solid #e8a69e}
+.bill.api{background:#eef0fb;color:#33409a;border:1px solid #aab3e6}
+/* 감 잡기: 한 줄 */
+.gam .one{font-family:var(--sans);font-size:15px;margin:6px 0 2px}
+/* 관제: 범위 · 영향 기호 앞 */
+.mon .range{font-size:13.5px;margin-bottom:6px}.mon .range span{color:var(--muted);font-size:11.5px}
+.ilist li{display:grid;grid-template-columns:26px 1fr;gap:6px;align-items:start}
+.ilist .ic{font-size:18px;line-height:1.2}
+.ilist .svc{margin-right:4px}
+.ilist .when{display:block;font-weight:700;font-size:12.5px;margin-top:2px}
+.ilist .pt,.ilist .pre{font-weight:400;color:var(--muted)}
+.ilist .meta{display:block;font-size:12px;color:var(--muted)}
+.ilist .imp0{background:#fdecea}.ilist .imp1{background:#fff4e5}
+/* 용어 사전: 분류별 접기 */
+.glossary .gcat{border:1px solid var(--line);padding:0 10px;margin:6px 0}
+.glossary .gcat>summary{font-size:15px;padding:10px 0}
+.glossary .gcat>summary span{font-weight:400;color:var(--muted);font-size:12px}
+.glossary .gcols{align-items:start}
+/* v5 (10/18 제4호 피드백) */
+/* 원문 보기: 기본 접힘 */
+details.origin>summary.oh{cursor:pointer;list-style:none;min-height:40px}
+details.origin>summary.oh::-webkit-details-marker{display:none}
+details.origin>summary.oh:before{content:'▸';margin-right:6px}
+details.origin[open]>summary.oh:before{content:'▾'}
+details.origin:not([open]){margin-bottom:6px}
+/* 02 등 격자: 기사 수에 맞춰 빈칸 없이 */
+.grid3:has(>.story:only-child){grid-template-columns:1fr}
+.grid3:has(>.story:nth-child(2):last-child){grid-template-columns:1fr 1fr}
+.grid3:has(>.story:nth-child(4)){grid-template-columns:1fr 1fr}
+.grid3:has(>.story:nth-child(4))>.story:nth-child(odd){padding-left:0;border-left:0}
+@media (min-width:821px){
+ .grid3>.story:only-child{column-count:2;column-gap:32px;column-rule:1px solid var(--line)}
+ .grid3>.story:only-child>.kick{display:block;column-span:all}.grid3>.story:only-child>.kick,.grid3>.story:only-child>h3,.grid3>.story:only-child>.origin,.grid3>.story:only-child>figure,.grid3>.story:only-child>details.photo{column-span:all}
+ .grid3>.story:only-child>p{break-inside:avoid}
+}
+/* 머스크·X + 관제: 나란히 두면 한쪽이 비므로 위아래로, 머스크 기사는 2단 */
+@media (min-width:821px){
+ .pair{grid-template-columns:1fr}
+ .pair>*{padding:0;border-left:0}
+ .pair>.sec+.sec{margin-top:28px;padding-top:4px;border-top:3px double var(--rule)}
+ .pair>#musk{column-count:2;column-gap:32px;column-rule:1px solid var(--line)}
+ .pair>#musk>.sec-head{column-span:all}
+ .pair>#musk>.story{break-inside:avoid;display:block;margin-bottom:16px}
+ /* 머스크 기사가 하나뿐인 날: 한쪽 단이 비지 않게 기사 본문을 2단으로 흘린다 */
+ .pair>#musk>.story:only-of-type{break-inside:auto}
+ .pair>#musk>.story:only-of-type>.kick,.pair>#musk>.story:only-of-type>h3,.pair>#musk>.story:only-of-type>.origin{column-span:all;display:block}
+ .pair>#musk>.story:only-of-type>.xq,.pair>#musk>.story:only-of-type>p{break-inside:avoid}
+}
+@media (min-width:641px) and (max-width:980px){.grid3:has(>.story:only-child)>.story{padding:0}}
+/* 사진 상자 */
+details.photo{margin:10px 0;border:1px solid var(--line);background:#fffdf7;font-family:var(--sans)}
+details.photo>summary{cursor:pointer;list-style:none;padding:8px 10px;font-weight:900;font-size:13px}
+details.photo>summary::-webkit-details-marker{display:none}
+details.photo>summary span{display:block;font-weight:400;color:var(--muted);font-size:12px}
+details.photo img{display:block;width:100%;height:auto}
+details.photo .cite{padding:6px 10px;font-size:11px;color:var(--muted)}
+/* 설명 속 작은 표 */
+.ttab{border-collapse:collapse;margin:6px 0;font-size:12.5px;font-family:var(--sans)}
+.ttab th,.ttab td{border:1px solid var(--line);padding:3px 8px;text-align:left}
+.ttab th{background:var(--paper2)}
+.ttab tr.hl td{background:#fff1c9;font-weight:700}
+/* 관제 v3 (10/18): 한 줄 결론 · 묶음 막대 · 참고 · 봇 컴퓨터 멈춤 */
+.mon .mhead{font-size:17px;font-weight:900;padding:8px 10px;margin:-2px -4px 10px;border-radius:3px}
+.mon .mhead.ok{background:#e8f4ec;color:#1f5a35}
+.mon .mhead.warn{background:#fff1dc;color:#7a3d00}
+.mon .mhead.gb{background:#eef0fb;color:#2b3a8c;font-size:14px;margin-top:-6px}
+.mon .ilist.top{margin:4px 0 10px}
+.mon .ilist .meta b{color:var(--ink)}
+.mgrp{margin:8px 0 2px}
+.mgrp .gname{font-size:11px;font-weight:900;letter-spacing:.08em;color:var(--muted);border-bottom:1px solid var(--line);margin-bottom:3px}
+.mrow .rtag{font-style:normal;font-size:10px;font-weight:700;color:var(--muted);border:1px solid var(--line);border-radius:3px;padding:0 3px;margin-left:4px;vertical-align:1px}
+.mrow.ref .track{opacity:.75}
+.track.hosttrack{background:#e9e6df}
+.track .seg.host{background:#8a94a6}
+details.pause{margin:6px 0 10px;border:1px dashed #8a94a6;border-radius:3px;font-size:13px}
+details.pause>summary{cursor:pointer;list-style:none;padding:7px 10px;font-weight:700}
+details.pause>summary::-webkit-details-marker{display:none}
+details.pause>summary span{font-weight:400;color:var(--muted);font-size:11.5px;margin-left:6px}
+details.pause p{margin:0 10px 4px;color:var(--muted);font-size:12px}
+details.pause ul{margin:0 10px 8px;padding-left:18px;font-size:12.5px}
+.mon .refh{margin-top:12px;font-size:12.5px;font-weight:900;border-top:2px solid var(--line);padding-top:8px}
+.ilist .imp-ref{background:transparent}
+.ilist .imp-ref.gb{background:#eef0fb}
+.ilist .gbtag{display:inline-block;font-size:11.5px;font-weight:900;color:#2b3a8c;background:#dfe3f8;border-radius:3px;padding:0 5px;margin-bottom:2px}
+details.refmore>summary{cursor:pointer;font-size:12.5px;color:var(--muted);padding:6px 0}
+.mrow,.ticks{grid-template-columns:100px 1fr 74px}
+.mrow .rtag{display:block;width:fit-content;margin:1px 0 0;line-height:1.3}
+@media (max-width:640px){.mrow,.ticks{grid-template-columns:78px 1fr 56px}.mon .mhead{font-size:15.5px}}
+.track .seg.nochk{background:repeating-linear-gradient(-45deg,#e8e2d4 0 3px,#fff 3px 6px);box-shadow:inset 0 0 0 1px #b9b2a3}
+.mrow .st.nochk{color:var(--muted);font-weight:700}
+ul.pause{margin:6px 0 10px;padding:7px 10px 7px 26px;border:1px dashed #8a94a6;border-radius:3px;font-size:13px}ul.pause li{margin:2px 0}
+
+/* v6 (10/19 제5호 피드백) */
+/* 원문 보기: 제목줄·펼친 내용 모두 좌정렬 */
+details.origin,details.origin>summary.oh,details.origin .olinks,details.origin .askai{text-align:left}
+details.origin>summary.oh{display:flex;justify-content:flex-start;align-items:center;flex-wrap:wrap;gap:4px 10px}
+details.origin>summary.oh span{margin-left:0}
+/* 관제 「참고」 태그 = 탭 설명 버튼(눌러서 설명 펼침) */
+.mrow button.t.rtag{font-family:var(--sans);font-style:normal;font-size:10px;font-weight:700;color:var(--muted);border:1px solid var(--line);border-bottom:1px solid var(--line);border-radius:3px;padding:0 3px;background:#fff;cursor:pointer;display:block;width:fit-content;margin:1px 0 0;line-height:1.3}
+.mrow button.t.rtag:after{font-size:.9em;vertical-align:0;margin-left:2px}
+.mrow button.t.rtag[aria-expanded=true]{background:rgba(163,32,27,.08);color:var(--ink)}
+.mgrp>.tdef{margin:2px 0 6px}
+/* 10/25 The Daily AI 맞춤: 회색 [계획], 장애 상태 점, 링크 설명 상자, 더보기 */
+.tag.plan{border:1px solid #bbb;background:#f0f0f0;color:#777}
+.st::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:5px;vertical-align:1px;background:#2e9e5b}
+.st.bad::before{background:#e8a317}.st.down::before{background:#d93025;animation:stp 1.4s infinite}
+@keyframes stp{50%{opacity:.35}}
+.lx{display:block;margin:6px 0 8px;padding:8px 10px;border:1px solid var(--rule,#ddd);border-left:3px solid var(--ink,#111);background:#fafafa;font-family:var(--sans);font-size:13px;line-height:1.5}
+.lx .lx-t{display:block;font-weight:700}.lx .lx-h{color:#888;font-size:12px}
+.lx .lx-open{display:inline-block;margin-top:6px;padding:4px 10px;border-radius:14px;background:var(--ink,#111);color:#fff!important;text-decoration:none;font-weight:700}
+.lx .lx-x{float:right;border:0;background:none;font-size:16px;cursor:pointer;color:#888}
+.more-hide{display:none!important}.more-btn{margin:6px 0;border:1px solid #ccc;background:#fff;border-radius:14px;padding:4px 12px;font-size:13px;cursor:pointer}
+
+</style></head><body>
+
+<title>브리핑 데일리 · 2026년 10월 25일 일요일 · 제8호</title>
+<div class="sheet">
+<header>
+ <div class="ears">
+  <div class="ear"><b>지면 구성</b> · The Daily AI와 같은 순서<br>01 1면 → 07 용어 사전 · 대표님 칸 추가</div>
+  <div class="mast">
+   <div class="kicker">김일론 대표 전용 · 아침 조간</div>
+   <h1>브리핑<span class="dot">·</span>데일리</h1>
+   <div class="en">The Briefing Daily — conclusion first, official source last</div>
+  </div>
+  <div class="ear"><b>환율 기준</b> · 1달러 = 1,324원<br>(2026-10-23 ECB 기준, 주말이라 금요일 값 · 본지 모든 원화 환산에 적용)</div>
+ </div>
+ <div class="dateline">
+  <span>서울 · 2026년 10월 25일 일요일</span>
+  <span class="c">제8호 · 주말판</span>
+  <span class="rt">8,465자 · 약 17분 읽기</span>
+  <span>취재 범위: 10/24(토) 06:00 ~ 10/25(일) 06:00 KST</span>
+ </div>
+ <nav class="index">
+  <a href="#front">AI 1면</a><a href="#companies">AI 회사 소식</a><a href="#voices">AI 리더의 한마디</a><a href="#policy">국가별 AI</a><a href="#me">대표님 칸</a><a href="#tools">AI 도구</a><a href="#mon">오늘의 AI 장애</a><a href="#glossary">AI 용어 사전</a>
+ </nav>
+</header>
+
+<section class="verdict" id="verdict">
+ <div class="lab">오늘의 결론</div>
+ <p>주말 사이 가장 쓸모 있는 소식은 보안 업데이트입니다. OpenAI가 AI로 찾은 Brotli 압축 라이브러리의 구멍이 공개됐고, Node.js나 Bun을 쓰는 곳은 새 버전으로 올려야 합니다.</p>
+ <aside class="num-tile"><b>오늘의 숫자</b> · 4곳<br>이번 Brotli 구멍을 막는 업데이트를 이미 낸 주요 소프트웨어(Node.js·Bun·Envoy Proxy·Istio, OpenAI 정리 페이지 기준 · 원조 Brotli 제외)</aside>
+</section>
+
+<section class="five" id="five" aria-label="오늘의 5">
+ <div class="h">오늘의 AI 5 <span>탭하면 해당 기사로</span></div>
+ <ol>
+  <li><a href="#lead">OpenAI, AI로 압축 라이브러리 Brotli 보안 구멍 찾아 · Node.js·Bun 업데이트 필요</a></li><li><a href="#grokbot">머스크 「Grok Bot 써 보세요」 · 「에이전트 수요, 이렇게 빨리 크는 건 처음」</a></li><li><a href="#codex">Codex CLI 0.164.0 · 대화 중 추론 수준을 바꿔도 캐시 유지</a></li><li><a href="#albert">Anthropic Alex Albert 「피드백은 이 사람들에게」 · Claude Code 담당 11명</a></li><li><a href="#starlink">머스크 「Starlink V3, 지금 V2보다 대역폭 약 100배」</a></li>
+ </ol>
+</section>
+
+<section class="sec" id="front">
+ <div class="sec-head"><span class="no">01</span><h2>AI 1면</h2><span class="sub">오늘 가장 큰 공식 발표</span></div>
+ <article class="lead" id="lead" data-merge>
+  <div class="label">1면 · OpenAI <span class="kick"><span class="srcn">4개 출처</span>공식 X 10/24(토) 07:55 KST (10/23 15:55 PT)</span></div>
+  <h2 class="big">OpenAI, AI로 압축 라이브러리 「Brotli」 보안 구멍 찾아<br>Node.js·Bun을 쓰면 새 버전으로 올려야</h2>
+  <p class="deck">OpenAI가 <a href="https://x.com/OpenAI/status/2113766354386084338" target="_blank" rel="noopener noreferrer">공식 X</a>에서, 10/24 공개한 최첨단 모델 훈련 환경 공격 점검(<button type="button" class="t" aria-expanded="false" data-def="일부러 공격자 역할을 맡아 약점을 찾아내는 점검 방식입니다." title="탭하면 설명">레드팀</button>) 중에 널리 쓰이는 압축 라이브러리 Brotli에서 로그인 없이 남의 컴퓨터에서 코드를 실행할 수 있는 구멍을 찾았다고 밝혔습니다.</p>
+  <div class="cols">
+   <p class="ax"><b>쉽게 말하면</b><button type="button" class="t" aria-expanded="false" data-def="Google이 만든 데이터 압축 라이브러리입니다. 웹에서 파일을 작게 줄여 주고받을 때 많이 씁니다." title="탭하면 설명">Brotli</button>는 Node.js·Bun·Envoy 같은 여러 소프트웨어 안에 들어 있습니다. 공격자가 일부러 망가뜨린 압축 데이터를 보내기만 하면, 계정을 만들 필요도 없이 그 컴퓨터에서 자기 코드를 돌릴 수 있습니다(<button type="button" class="t" aria-expanded="false" data-def="인터넷 너머의 공격자가 남의 컴퓨터에서 마음대로 프로그램을 실행하는 것입니다. 보안 구멍 가운데 가장 위험한 종류로 꼽힙니다." title="탭하면 설명">원격 코드 실행</button>).</p>
+   <p class="ax"><b>누가 위험한가</b>OpenAI는 업데이트하지 않은 서버는 압축 데이터를 받다가 나쁜 사용자에게, 업데이트하지 않은 프로그램(예: <code>curl --compressed</code>)은 나쁜 서버의 응답을 받다가 장악될 수 있다고 설명했습니다. OpenAI가 만든 정리 페이지 <a href="https://patchtheplanet.org/brotli" target="_blank" rel="noopener noreferrer">「Patch the Planet · Brotli decoder vulnerability」</a>는 웹 서비스, 백그라운드 작업, Node.js나 Bun을 품은 도구, Brotli 압축 풀기를 켠 Envoy Proxy·Istio를 점검 대상으로 꼽았습니다.</p>
+   <p class="ax"><b>왜 중요한가</b>문제의 원인은 2월에 Brotli 원본 코드에서 이미 고쳐졌지만, 그때는 보안 구멍인 줄 몰랐고 새 배포판도 나오지 않았다고 OpenAI는 밝혔습니다. Brotli는 다른 소프트웨어 안에 들어 있어서, 그 소프트웨어가 먼저 업데이트하고 사용자도 따라 올려야 막힙니다. <a href="https://nodejs.org/en/blog/vulnerability/october-2026-security-releases" target="_blank" rel="noopener noreferrer">Node.js 공식 보안 공지</a>는 이 구멍을 위험도 「high」로 매기고, 찾아낸 사람을 「OpenAI Codex Security」의 Khai Tran·Sylvie Mayer로 적었습니다.</p>
+   <ul class="facts">
+    <li><span class="tag done">된 것</span>Brotli 1.0.10·1.1.1·1.2.1 배포, <button type="button" class="t" aria-expanded="false" data-def="전 세계 공통으로 쓰는 보안 취약점 번호입니다." title="탭하면 설명">CVE</button> 번호 CVE-2026-111497 · 10/22(목) 04:27 KST <span class="src"><a href="https://github.com/google/brotli/releases/tag/v1.2.1" target="_blank" rel="noopener noreferrer">Brotli 공식 릴리스</a></span></li>
+    <li><span class="tag done">된 것</span>Node.js 22.23.4·24.22.1·26.12.1 · Bun 1.4.4 · Envoy Proxy 1.40.0·1.39.3·1.38.6·1.37.8 · Istio 1.29.9·1.30.6·1.31.2에서 고침 <span class="src"><a href="https://patchtheplanet.org/brotli" target="_blank" rel="noopener noreferrer">OpenAI 정리 페이지</a></span></li>
+   </ul>
+   <p class="ax"><b>바로 할 일</b>OpenAI 정리 페이지는 위 버전 이상으로 올린 뒤 서비스를 다시 시작하라고 권합니다. 당장 못 올리면, 믿을 수 없는 곳에서 온 데이터의 Brotli 압축 풀기만 꺼 두라고 했습니다(gzip 같은 다른 압축은 그대로 써도 됨).</p>
+  </div>
+  <details class="origin"><summary class="oh">🔗 원문 보기 <span>공식 원문 4개 · 탭하면 펼침</span></summary><ul class="olinks"><li><a href="https://patchtheplanet.org/brotli" target="_blank" rel="noopener noreferrer">OpenAI 정리 페이지 · Patch the Planet · Brotli decoder vulnerability</a><span class="url">https://patchtheplanet.org/brotli</span></li><li><a href="https://x.com/OpenAI/status/2113766354386084338" target="_blank" rel="noopener noreferrer">𝕏 OpenAI 공식 X · Brotli 취약점 발견</a><span class="url">https://x.com/OpenAI/status/2113766354386084338</span></li><li><a href="https://nodejs.org/en/blog/vulnerability/october-2026-security-releases" target="_blank" rel="noopener noreferrer">Node.js 공식 보안 공지 · October 2026 security releases</a><span class="url">https://nodejs.org/en/blog/vulnerability/october-2026-security-releases</span></li><li><a href="https://github.com/google/brotli/releases/tag/v1.2.1" target="_blank" rel="noopener noreferrer">Google Brotli 공식 릴리스 · v1.2.1</a><span class="url">https://github.com/google/brotli/releases/tag/v1.2.1</span></li></ul><details class="askai" open><summary>🤖 다른 AI에 물어보기 <span>버튼 = 질문 문장 복사 → AI 앱에 붙여넣기</span></summary><div class="ask"><span class="who">OpenAI 정리 페이지 · Patch the Planet · Brotli decoder vulnerability</span><span class="to">→ ChatGPT·Claude·Gemini·Grok 아무 데나</span><div class="btns"><button type="button" class="cp" data-copy="https://patchtheplanet.org/brotli 이 글 전문을 빠짐없이 알기 쉬운 한국어로 번역해 줘">전문 번역 질문 복사</button><button type="button" class="cp" data-copy="https://patchtheplanet.org/brotli 이 글의 핵심만 한국어 3줄로 요약해 줘">요약 질문 복사</button></div></div><div class="ask x"><span class="who">𝕏 OpenAI 공식 X · Brotli 취약점 발견</span><span class="to">→ <b>Grok</b>에 붙여넣기</span><div class="btns"><button type="button" class="cp grok" data-copy="https://x.com/OpenAI/status/2113766354386084338 이 X 글을 이어진 쓰레드·첨부 영상·링크까지 끝까지 읽고, 빠짐없이 전문을 알기 쉬운 한국어로 번역해 줘" data-ai="grok">전문 번역 질문 복사</button><button type="button" class="cp grok" data-copy="https://x.com/OpenAI/status/2113766354386084338 이 X 글의 핵심만 한국어 3줄로 요약해 줘" data-ai="grok">요약 질문 복사</button></div></div><div class="ask"><span class="who">Node.js 공식 보안 공지 · October 2026 security releases</span><span class="to">→ ChatGPT·Claude·Gemini·Grok 아무 데나</span><div class="btns"><button type="button" class="cp" data-copy="https://nodejs.org/en/blog/vulnerability/october-2026-security-releases 이 글 전문을 빠짐없이 알기 쉬운 한국어로 번역해 줘">전문 번역 질문 복사</button><button type="button" class="cp" data-copy="https://nodejs.org/en/blog/vulnerability/october-2026-security-releases 이 글의 핵심만 한국어 3줄로 요약해 줘">요약 질문 복사</button></div></div><div class="ask"><span class="who">Google Brotli 공식 릴리스 · v1.2.1</span><span class="to">→ ChatGPT·Claude·Gemini·Grok 아무 데나</span><div class="btns"><button type="button" class="cp" data-copy="https://github.com/google/brotli/releases/tag/v1.2.1 이 글 전문을 빠짐없이 알기 쉬운 한국어로 번역해 줘">전문 번역 질문 복사</button><button type="button" class="cp" data-copy="https://github.com/google/brotli/releases/tag/v1.2.1 이 글의 핵심만 한국어 3줄로 요약해 줘">요약 질문 복사</button></div></div><p class="xnote">𝕏 글은 <b>Grok</b>에 붙여 넣으세요. ChatGPT·Claude·Gemini는 X 페이지를 열면 막히거나 글 일부만 보이는 경우가 많아, 이어진 글·영상까지 읽지 못합니다.</p></details></details>
+ </article>
+</section>
+
+<section class="sec" id="companies">
+ <div class="sec-head"><span class="no">02</span><h2>AI 회사 소식</h2><span class="sub">공식 발표·담당자 X</span></div>
+  <article class="story" id="albert">
+   <span class="kick">Anthropic · 피드백 창구</span>
+   <h3>Alex Albert 「Claude 피드백은 이 사람들을 태그하세요」 · Claude Code 담당 11명</h3>
+   <p class="ax"><b>한 줄</b>Anthropic 연구 조직의 <button type="button" class="t who" aria-expanded="false" data-def="Anthropic에서 일하는 사람입니다. 본인 X 소개에 「Research @AnthropicAI」라고 적었습니다." title="탭하면 설명">Alex Albert</button>가 10/25(일) 02:54 KST (10/24 10:54 PT) <a href="https://x.com/alexalbert__/status/2114052900045590580" target="_blank" rel="noopener noreferrer">본인 X</a>에서 「우리 제품에 진심이고 여러분 이야기를 듣고 싶어 하는 사람들」이라며, 의견이 있으면 태그하라고 제품별 담당자 X 계정을 올렸습니다.</p>
+   <p class="ax"><b>누구에게</b>Claude Code 11명(@bcherny·@_catwu·@lydiahallie·@addyosmani·@jarredsumner 등), Chat·Cowork 4명, Duet 2명, Tag 2명, API·Platform 5명, 일반·커뮤니티 3명과 본인입니다. Claude Code 불편을 X에 쓸 때 이 계정을 태그하면 담당자에게 바로 닿습니다.</p>
+   <details class="origin"><summary class="oh">🔗 원문 보기 <span>공식 원문 1개 · 탭하면 펼침</span></summary><ul class="olinks"><li><a href="https://x.com/alexalbert__/status/2114052900045590580" target="_blank" rel="noopener noreferrer">𝕏 Alex Albert 본인 X · 제품별 피드백 담당자</a><span class="url">https://x.com/alexalbert__/status/2114052900045590580</span></li></ul><details class="askai" open><summary>🤖 다른 AI에 물어보기 <span>버튼 = 질문 문장 복사 → AI 앱에 붙여넣기</span></summary><div class="ask x"><span class="who">𝕏 Alex Albert 본인 X · 제품별 피드백 담당자</span><span class="to">→ <b>Grok</b>에 붙여넣기</span><div class="btns"><button type="button" class="cp grok" data-copy="https://x.com/alexalbert__/status/2114052900045590580 이 X 글을 이어진 쓰레드·첨부 영상·링크까지 끝까지 읽고, 빠짐없이 전문을 알기 쉬운 한국어로 번역해 줘" data-ai="grok">전문 번역 질문 복사</button><button type="button" class="cp grok" data-copy="https://x.com/alexalbert__/status/2114052900045590580 이 X 글의 핵심만 한국어 3줄로 요약해 줘" data-ai="grok">요약 질문 복사</button></div></div><p class="xnote">𝕏 글은 <b>Grok</b>에 붙여 넣으세요. ChatGPT·Claude·Gemini는 X 페이지를 열면 막히거나 글 일부만 보이는 경우가 많아, 이어진 글·영상까지 읽지 못합니다.</p></details></details>
+  </article>
+  <article class="story" id="imagine" data-merge>
+   <span class="kick"><span class="srcn">4개 출처</span>xAI · Grok Imagine</span>
+   <h3>머스크, Grok Imagine으로 만든 영상 시리즈 「Odyssey」 1화 소개</h3>
+   <p>머스크가 10/24(토) 14:45 KST (10/24 00:45 CT) <a href="https://x.com/elonmusk/status/2113869401930039702" target="_blank" rel="noopener noreferrer">X 글</a>에서 「Odyssey with Grok Imagine」이라며 <button type="button" class="t" aria-expanded="false" data-def="xAI의 이미지·영상 생성 기능입니다." title="탭하면 설명">Grok Imagine</button> 공식 계정의 <a href="https://x.com/imagine/status/2113712964419063911" target="_blank" rel="noopener noreferrer">글</a>을 인용했습니다. 그 글은 Grok Imagine으로 만든 「Odyssey」 시리즈 1화를 올리며, Wonder Studios(@WonderStudiosX)·감독 Dev Walker와 함께 만들었다고 밝혔습니다. 만든 과정을 자세히 풀어 줄지 댓글로 의견을 받는다고 했습니다.</p>
+   <p>3분 뒤 14:48 KST에는 「Grok Imagine이 믿기 어려울 만큼 빨리 좋아졌고, 이제 영상에 넣을 음악까지 만든다」는 사용자(@XFreeze) <a href="https://x.com/XFreeze/status/2113633718510494169" target="_blank" rel="noopener noreferrer">글</a>에 <a href="https://x.com/elonmusk/status/2113870130799362063" target="_blank" rel="noopener noreferrer">「True」</a>(맞다)라고 답했습니다.</p>
+   <details class="origin"><summary class="oh">🔗 원문 보기 <span>공식 원문 3개 · 탭하면 펼침</span></summary><ul class="olinks"><li><a href="https://x.com/imagine/status/2113712964419063911" target="_blank" rel="noopener noreferrer">𝕏 Grok Imagine 공식 X · Odyssey 1화</a><span class="url">https://x.com/imagine/status/2113712964419063911</span></li><li><a href="https://x.com/elonmusk/status/2113869401930039702" target="_blank" rel="noopener noreferrer">𝕏 일론 머스크 X 원문 · Odyssey with Grok Imagine</a><span class="url">https://x.com/elonmusk/status/2113869401930039702</span></li><li><a href="https://x.com/elonmusk/status/2113870130799362063" target="_blank" rel="noopener noreferrer">𝕏 일론 머스크 X 원문 · True</a><span class="url">https://x.com/elonmusk/status/2113870130799362063</span></li></ul><details class="askai" open><summary>🤖 다른 AI에 물어보기 <span>버튼 = 질문 문장 복사 → AI 앱에 붙여넣기</span></summary><div class="ask x"><span class="who">𝕏 Grok Imagine 공식 X · Odyssey 1화</span><span class="to">→ <b>Grok</b>에 붙여넣기</span><div class="btns"><button type="button" class="cp grok" data-copy="https://x.com/imagine/status/2113712964419063911 이 X 글을 이어진 쓰레드·첨부 영상·링크까지 끝까지 읽고, 빠짐없이 전문을 알기 쉬운 한국어로 번역해 줘" data-ai="grok">전문 번역 질문 복사</button><button type="button" class="cp grok" data-copy="https://x.com/imagine/status/2113712964419063911 이 X 글의 핵심만 한국어 3줄로 요약해 줘" data-ai="grok">요약 질문 복사</button></div></div><div class="ask x"><span class="who">𝕏 일론 머스크 X 원문 · Odyssey with Grok Imagine</span><span class="to">→ <b>Grok</b>에 붙여넣기</span><div class="btns"><button type="button" class="cp grok" data-copy="https://x.com/elonmusk/status/2113869401930039702 이 X 글을 이어진 쓰레드·첨부 영상·링크까지 끝까지 읽고, 빠짐없이 전문을 알기 쉬운 한국어로 번역해 줘" data-ai="grok">전문 번역 질문 복사</button><button type="button" class="cp grok" data-copy="https://x.com/elonmusk/status/2113869401930039702 이 X 글의 핵심만 한국어 3줄로 요약해 줘" data-ai="grok">요약 질문 복사</button></div></div><div class="ask x"><span class="who">𝕏 일론 머스크 X 원문 · True</span><span class="to">→ <b>Grok</b>에 붙여넣기</span><div class="btns"><button type="button" class="cp grok" data-copy="https://x.com/elonmusk/status/2113870130799362063 이 X 글을 이어진 쓰레드·첨부 영상·링크까지 끝까지 읽고, 빠짐없이 전문을 알기 쉬운 한국어로 번역해 줘" data-ai="grok">전문 번역 질문 복사</button><button type="button" class="cp grok" data-copy="https://x.com/elonmusk/status/2113870130799362063 이 X 글의 핵심만 한국어 3줄로 요약해 줘" data-ai="grok">요약 질문 복사</button></div></div><p class="xnote">𝕏 글은 <b>Grok</b>에 붙여 넣으세요. ChatGPT·Claude·Gemini는 X 페이지를 열면 막히거나 글 일부만 보이는 경우가 많아, 이어진 글·영상까지 읽지 못합니다.</p></details></details>
+  </article>
+</section>
+
+<section class="sec" id="voices">
+ <div class="sec-head"><span class="no">03</span><h2>AI 리더의 한마디</h2><span class="sub">머스크 등 대표님 팔로잉</span></div>
+
+ <article class="story" id="grokbot" data-merge>
+  <div class="label">xAI · Grok Bot <span class="kick"><span class="srcn">5개 출처</span>머스크 X 10/24(토) 23:11 KST (10/24 09:11 CT)</span></div>
+  <h3>머스크 「Grok Bot 써 보세요」 · 「에이전트 수요, 이렇게 빨리 크는 건 처음 봤다」</h3>
+  <div class="xq"><div class="who">Elon Musk <span>@elonmusk · 10/25(일) 01:49 KST (10/24 11:49 CT)</span></div>
+   <blockquote>“Agentic demand is growing faster than I’ve ever seen anything grow”</blockquote>
+   <div class="ko">“에이전트 수요가 지금까지 본 그 어떤 것보다 빠르게 늘고 있다”</div></div>
+  <p class="ax"><b>한 줄</b><button type="button" class="t who" aria-expanded="false" data-def="테슬라·스페이스X 최고경영자이자 xAI 창업자입니다." title="탭하면 설명">일론 머스크</button>가 10/24(토) 23:11 KST (10/24 09:11 CT) <a href="https://x.com/elonmusk/status/2113996858842563006" target="_blank" rel="noopener noreferrer">X 글</a>에서 「Try Grok @Bot」(Grok Bot을 써 보세요)이라며 <button type="button" class="t who" aria-expanded="false" data-def="본인 X 소개에 팟캐스트 계정(@katiemillerpod)을 적어 둔 사람입니다. 이번 대담 영상을 X에 올렸습니다." title="탭하면 설명">Katie Miller</button>가 올린 <a href="https://x.com/KatieMiller/status/2113992593465860319" target="_blank" rel="noopener noreferrer">대담 영상</a>을 인용했습니다. 위 「에이전트 수요」 말은 다음 날 새벽 한 사용자 글에 단 <a href="https://x.com/elonmusk/status/2114036686870982681" target="_blank" rel="noopener noreferrer">답글</a>입니다.</p>
+  <p class="ax"><b>영상 속 사용기</b>Stuart Varney가 「Grok Bot이 뭐냐」고 묻자 Phil Rosen(@philrosenn)은 「지난 1년쯤 Claude를 썼고 ChatGPT, 최근 몇 주는 Muse도 조금 썼는데, 이번 달 Grok Bot을 쓰기 시작한 뒤 다른 AI 도구는 사실상 다 끊었다」고 답했습니다. 「총괄 책임자 에이전트가 다른 AI 에이전트들을 관리하는, 나만의 AI 직원들」이라며 콘텐츠 만들기·사실 확인·편집·조사·캘린더 관리에 쓴다고 했습니다.</p>
+  <p class="ax"><b>같은 날</b>머스크는 10/24(토) 15:16 KST (10/24 01:16 CT) <a href="https://x.com/elonmusk/status/2113877257613947348" target="_blank" rel="noopener noreferrer">「So do I」</a>(저도요)라며 한 사용자(@Teslaconomics)의 <a href="https://x.com/Teslaconomics/status/2113861688370073898" target="_blank" rel="noopener noreferrer">글</a>을 인용했습니다. 그 사용자는 신용카드 5장을 Grok Bot 보관함에 넣고 문자 한 번으로 물건·항공권·호텔을 산다며, 봇은 카드 전체 번호와 보안 코드를 보지 못하고 살 때마다 자기가 승인한다고 썼습니다.</p>
+  <ul class="facts">
+   <li><span class="tag view">사용자 주장</span>「봇은 카드 전체 번호·보안 코드를 보지 못한다」는 사용자 글의 설명입니다 <span class="src"><a href="https://x.com/Teslaconomics/status/2113861688370073898" target="_blank" rel="noopener noreferrer">@Teslaconomics X</a></span></li>
+  </ul>
+  <details class="origin"><summary class="oh">🔗 원문 보기 <span>공식 원문 5개 · 탭하면 펼침</span></summary><ul class="olinks"><li><a href="https://x.com/elonmusk/status/2113996858842563006" target="_blank" rel="noopener noreferrer">𝕏 일론 머스크 X 원문 · Try Grok Bot</a><span class="url">https://x.com/elonmusk/status/2113996858842563006</span></li><li><a href="https://x.com/KatieMiller/status/2113992593465860319" target="_blank" rel="noopener noreferrer">𝕏 Katie Miller 본인 X · Grok Bot 대담 영상</a><span class="url">https://x.com/KatieMiller/status/2113992593465860319</span></li><li><a href="https://x.com/elonmusk/status/2114036686870982681" target="_blank" rel="noopener noreferrer">𝕏 일론 머스크 X 원문 · 에이전트 수요</a><span class="url">https://x.com/elonmusk/status/2114036686870982681</span></li><li><a href="https://x.com/elonmusk/status/2113877257613947348" target="_blank" rel="noopener noreferrer">𝕏 일론 머스크 X 원문 · So do I</a><span class="url">https://x.com/elonmusk/status/2113877257613947348</span></li><li><a href="https://x.com/Teslaconomics/status/2113861688370073898" target="_blank" rel="noopener noreferrer">𝕏 사용자 X · 카드 보관함 사용기</a><span class="url">https://x.com/Teslaconomics/status/2113861688370073898</span></li></ul><details class="askai" open><summary>🤖 다른 AI에 물어보기 <span>버튼 = 질문 문장 복사 → AI 앱에 붙여넣기</span></summary><div class="ask x"><span class="who">𝕏 일론 머스크 X 원문 · Try Grok Bot</span><span class="to">→ <b>Grok</b>에 붙여넣기</span><div class="btns"><button type="button" class="cp grok" data-copy="https://x.com/elonmusk/status/2113996858842563006 이 X 글을 이어진 쓰레드·첨부 영상·링크까지 끝까지 읽고, 빠짐없이 전문을 알기 쉬운 한국어로 번역해 줘" data-ai="grok">전문 번역 질문 복사</button><button type="button" class="cp grok" data-copy="https://x.com/elonmusk/status/2113996858842563006 이 X 글의 핵심만 한국어 3줄로 요약해 줘" data-ai="grok">요약 질문 복사</button></div></div><div class="ask x"><span class="who">𝕏 Katie Miller 본인 X · Grok Bot 대담 영상</span><span class="to">→ <b>Grok</b>에 붙여넣기</span><div class="btns"><button type="button" class="cp grok" data-copy="https://x.com/KatieMiller/status/2113992593465860319 이 X 글을 이어진 쓰레드·첨부 영상·링크까지 끝까지 읽고, 빠짐없이 전문을 알기 쉬운 한국어로 번역해 줘" data-ai="grok">전문 번역 질문 복사</button><button type="button" class="cp grok" data-copy="https://x.com/KatieMiller/status/2113992593465860319 이 X 글의 핵심만 한국어 3줄로 요약해 줘" data-ai="grok">요약 질문 복사</button></div></div><div class="ask x"><span class="who">𝕏 일론 머스크 X 원문 · 에이전트 수요</span><span class="to">→ <b>Grok</b>에 붙여넣기</span><div class="btns"><button type="button" class="cp grok" data-copy="https://x.com/elonmusk/status/2114036686870982681 이 X 글을 이어진 쓰레드·첨부 영상·링크까지 끝까지 읽고, 빠짐없이 전문을 알기 쉬운 한국어로 번역해 줘" data-ai="grok">전문 번역 질문 복사</button><button type="button" class="cp grok" data-copy="https://x.com/elonmusk/status/2114036686870982681 이 X 글의 핵심만 한국어 3줄로 요약해 줘" data-ai="grok">요약 질문 복사</button></div></div><div class="ask x"><span class="who">𝕏 일론 머스크 X 원문 · So do I</span><span class="to">→ <b>Grok</b>에 붙여넣기</span><div class="btns"><button type="button" class="cp grok" data-copy="https://x.com/elonmusk/status/2113877257613947348 이 X 글을 이어진 쓰레드·첨부 영상·링크까지 끝까지 읽고, 빠짐없이 전문을 알기 쉬운 한국어로 번역해 줘" data-ai="grok">전문 번역 질문 복사</button><button type="button" class="cp grok" data-copy="https://x.com/elonmusk/status/2113877257613947348 이 X 글의 핵심만 한국어 3줄로 요약해 줘" data-ai="grok">요약 질문 복사</button></div></div><div class="ask x"><span class="who">𝕏 사용자 X · 카드 보관함 사용기</span><span class="to">→ <b>Grok</b>에 붙여넣기</span><div class="btns"><button type="button" class="cp grok" data-copy="https://x.com/Teslaconomics/status/2113861688370073898 이 X 글을 이어진 쓰레드·첨부 영상·링크까지 끝까지 읽고, 빠짐없이 전문을 알기 쉬운 한국어로 번역해 줘" data-ai="grok">전문 번역 질문 복사</button><button type="button" class="cp grok" data-copy="https://x.com/Teslaconomics/status/2113861688370073898 이 X 글의 핵심만 한국어 3줄로 요약해 줘" data-ai="grok">요약 질문 복사</button></div></div><p class="xnote">𝕏 글은 <b>Grok</b>에 붙여 넣으세요. ChatGPT·Claude·Gemini는 X 페이지를 열면 막히거나 글 일부만 보이는 경우가 많아, 이어진 글·영상까지 읽지 못합니다.</p></details></details>
+ </article>
+ <article class="story" id="starlink">
+  <span class="kick">SpaceX · Starlink</span>
+  <h3>머스크 「막 발사를 시작한 Starlink V3, 지금 V2보다 대역폭 약 100배」</h3>
+  <div class="xq"><div class="who">Elon Musk <span>@elonmusk · 10/25(일) 04:20 KST (10/24 14:20 CT)</span></div>
+   <blockquote>“Starlink V3, which only just started launching, will have ~100 times more bandwidth than the current V2 system”</blockquote>
+   <div class="ko">“이제 막 발사를 시작한 Starlink V3는 지금의 V2 시스템보다 대역폭이 약 100배가 될 것”</div></div>
+  <p class="ax"><b>쉽게</b>머스크가 한 사용자 글에 단 <a href="https://x.com/elonmusk/status/2114074592990150788" target="_blank" rel="noopener noreferrer">X 답글</a>입니다. <button type="button" class="t" aria-expanded="false" data-def="한 번에 주고받을 수 있는 데이터의 양입니다. 클수록 더 많은 사람이 더 빠르게 씁니다." title="탭하면 설명">대역폭</button>이 약 100배라는 것은 V3 위성들이 다 올라간 뒤의 목표치로, 「will have」(갖게 될 것)라는 계획 표현입니다.</p>
+  <ul class="facts"><li><span class="tag plan">계획</span>V3 대역폭 V2의 약 100배 <span class="src"><a href="https://x.com/elonmusk/status/2114074592990150788" target="_blank" rel="noopener noreferrer">머스크 X</a></span></li></ul>
+  <details class="origin"><summary class="oh">🔗 원문 보기 <span>공식 원문 1개 · 탭하면 펼침</span></summary><ul class="olinks"><li><a href="https://x.com/elonmusk/status/2114074592990150788" target="_blank" rel="noopener noreferrer">𝕏 일론 머스크 X 원문 · Starlink V3 대역폭</a><span class="url">https://x.com/elonmusk/status/2114074592990150788</span></li></ul><details class="askai" open><summary>🤖 다른 AI에 물어보기 <span>버튼 = 질문 문장 복사 → AI 앱에 붙여넣기</span></summary><div class="ask x"><span class="who">𝕏 일론 머스크 X 원문 · Starlink V3 대역폭</span><span class="to">→ <b>Grok</b>에 붙여넣기</span><div class="btns"><button type="button" class="cp grok" data-copy="https://x.com/elonmusk/status/2114074592990150788 이 X 글을 이어진 쓰레드·첨부 영상·링크까지 끝까지 읽고, 빠짐없이 전문을 알기 쉬운 한국어로 번역해 줘" data-ai="grok">전문 번역 질문 복사</button><button type="button" class="cp grok" data-copy="https://x.com/elonmusk/status/2114074592990150788 이 X 글의 핵심만 한국어 3줄로 요약해 줘" data-ai="grok">요약 질문 복사</button></div></div><p class="xnote">𝕏 글은 <b>Grok</b>에 붙여 넣으세요. ChatGPT·Claude·Gemini는 X 페이지를 열면 막히거나 글 일부만 보이는 경우가 많아, 이어진 글·영상까지 읽지 못합니다.</p></details></details>
+ </article>
+</section>
+
+<section class="sec" id="policy">
+ <div class="sec-head"><span class="no">04</span><h2>국가별 AI</h2><span class="sub">정부·정책</span></div>
+ <p class="ax">취재 범위(10/24 06:00 ~ 10/25 06:00 KST) 안에 대표님 관심 범위의 국가별 AI 공식 발표는 없었습니다.</p>
+</section>
+
+<section class="sec" id="me">
+ <div class="sec-head"><span class="no">★</span><h2>대표님 칸 · 테슬라·스페이스X</h2><span class="sub">개인판 추가 칸</span></div>
+ <article class="story" id="roadster">
+  <span class="kick">테슬라 · 로드스터</span>
+  <h3>로드스터 시제품, LA 피터슨 자동차 박물관 로비에 나흘간 전시</h3>
+  <p class="ax"><b>한 줄</b>머스크가 10/24(토) 22:56 KST (10/24 08:56 CT) <a href="https://x.com/elonmusk/status/2113993051719016814" target="_blank" rel="noopener noreferrer">「Roadster at Petersen」</a>이라며 테슬라 북미 공식 X의 <a href="https://x.com/tesla_na/status/2113672809281118429" target="_blank" rel="noopener noreferrer">전시 안내</a>를 인용했습니다. <a href="https://petersen.org/pages/petersen-vehicle/tesla-roadster" target="_blank" rel="noopener noreferrer">피터슨 자동차 박물관 공식 페이지</a>에 따르면 전시 차는 「2028 Tesla Roadster Thrust Prototype」이고, 한국 날짜로 10/25(일)~10/28(수)(현지 10/24~10/27) 본관 로비(Main Lobby)에 둡니다.</p>
+  <p class="ax"><b>배경</b>같은 페이지는 현지 10/14 텍사스 맥그레거 공개 행사에서 Roadster Thrust가 0→약 97km/h(60mph) 1초 미만을 기록했다고 적었습니다.</p>
+  <details class="photo"><summary>📷 사진으로 크기 보기 <span>피터슨 자동차 박물관 전시 안내 사진</span></summary><img src="img/roadster-petersen.jpg" alt="피터슨 자동차 박물관 전시 안내 사진" loading="lazy"><div class="cite">사진: <a href="https://x.com/tesla_na/status/2113672809281118429" target="_blank" rel="noopener noreferrer">Tesla North America 공식 X</a>(회사 공식 게시 사진)</div></details>
+  <details class="origin"><summary class="oh">🔗 원문 보기 <span>공식 원문 3개 · 탭하면 펼침</span></summary><ul class="olinks"><li><a href="https://petersen.org/pages/petersen-vehicle/tesla-roadster" target="_blank" rel="noopener noreferrer">피터슨 자동차 박물관 공식 페이지 · 2028 Tesla Roadster Thrust Prototype</a><span class="url">https://petersen.org/pages/petersen-vehicle/tesla-roadster</span></li><li><a href="https://x.com/tesla_na/status/2113672809281118429" target="_blank" rel="noopener noreferrer">𝕏 Tesla North America 공식 X · 전시 안내</a><span class="url">https://x.com/tesla_na/status/2113672809281118429</span></li><li><a href="https://x.com/elonmusk/status/2113993051719016814" target="_blank" rel="noopener noreferrer">𝕏 일론 머스크 X 원문 · Roadster at Petersen</a><span class="url">https://x.com/elonmusk/status/2113993051719016814</span></li></ul><details class="askai" open><summary>🤖 다른 AI에 물어보기 <span>버튼 = 질문 문장 복사 → AI 앱에 붙여넣기</span></summary><div class="ask"><span class="who">피터슨 자동차 박물관 공식 페이지 · 2028 Tesla Roadster Thrust Prototype</span><span class="to">→ ChatGPT·Claude·Gemini·Grok 아무 데나</span><div class="btns"><button type="button" class="cp" data-copy="https://petersen.org/pages/petersen-vehicle/tesla-roadster 이 글 전문을 빠짐없이 알기 쉬운 한국어로 번역해 줘">전문 번역 질문 복사</button><button type="button" class="cp" data-copy="https://petersen.org/pages/petersen-vehicle/tesla-roadster 이 글의 핵심만 한국어 3줄로 요약해 줘">요약 질문 복사</button></div></div><div class="ask x"><span class="who">𝕏 Tesla North America 공식 X · 전시 안내</span><span class="to">→ <b>Grok</b>에 붙여넣기</span><div class="btns"><button type="button" class="cp grok" data-copy="https://x.com/tesla_na/status/2113672809281118429 이 X 글을 이어진 쓰레드·첨부 영상·링크까지 끝까지 읽고, 빠짐없이 전문을 알기 쉬운 한국어로 번역해 줘" data-ai="grok">전문 번역 질문 복사</button><button type="button" class="cp grok" data-copy="https://x.com/tesla_na/status/2113672809281118429 이 X 글의 핵심만 한국어 3줄로 요약해 줘" data-ai="grok">요약 질문 복사</button></div></div><div class="ask x"><span class="who">𝕏 일론 머스크 X 원문 · Roadster at Petersen</span><span class="to">→ <b>Grok</b>에 붙여넣기</span><div class="btns"><button type="button" class="cp grok" data-copy="https://x.com/elonmusk/status/2113993051719016814 이 X 글을 이어진 쓰레드·첨부 영상·링크까지 끝까지 읽고, 빠짐없이 전문을 알기 쉬운 한국어로 번역해 줘" data-ai="grok">전문 번역 질문 복사</button><button type="button" class="cp grok" data-copy="https://x.com/elonmusk/status/2113993051719016814 이 X 글의 핵심만 한국어 3줄로 요약해 줘" data-ai="grok">요약 질문 복사</button></div></div><p class="xnote">𝕏 글은 <b>Grok</b>에 붙여 넣으세요. ChatGPT·Claude·Gemini는 X 페이지를 열면 막히거나 글 일부만 보이는 경우가 많아, 이어진 글·영상까지 읽지 못합니다.</p></details></details>
+ </article>
+</section>
+
+
+<section class="sec" id="tools">
+ <div class="sec-head"><span class="no">05</span><h2>AI 도구</h2><span class="sub">공식 변경 기록·블로그</span></div>
+ <article class="story box tools" id="codex" data-merge>
+  <span class="kick"><span class="srcn">3개 출처</span>Codex CLI 0.164.0 · Claude Code 2.1.310</span>
+  <h3 style="font-size:19px">오늘의 팁 — 「추론 수준은 대화 도중에 바꿔도 된다」</h3>
+  <div class="grid2">
+   <div>
+    <div class="row"><b>무엇이 바뀌었나</b><ol>
+     <li><b>Codex</b>: OpenAI에서 Codex·ChatGPT 일을 하는 <button type="button" class="t who" aria-expanded="false" data-def="OpenAI에서 Codex와 ChatGPT를 맡고 있다고 본인 X 소개에 적은 사람입니다(@thsottiaux)." title="탭하면 설명">Tibo</button>가 10/24(토) 08:12 KST (10/23 16:12 PT) <a href="https://x.com/thsottiaux/status/2113770573994299544" target="_blank" rel="noopener noreferrer">본인 X</a>에서 「이제 Codex에서 대화 도중 추론 수준(reasoning)을 바꿔도 <button type="button" class="t" aria-expanded="false" data-def="앞서 처리한 대화 내용을 저장해 두고 다시 쓰는 것입니다. 캐시가 살아 있으면 같은 내용을 처음부터 다시 처리하지 않습니다." title="탭하면 설명">캐시</button>가 무효화되지 않는다」며 Codex CLI도 업데이트했다고 밝혔습니다.</li>
+     <li><b>Codex CLI 0.164.0</b>(10/23(금) 13:48 KST, <a href="https://github.com/openai/codex/releases/tag/rust-v0.164.0" target="_blank" rel="noopener noreferrer">Codex 공식 릴리스</a>): 자주 쓰는 프롬프트·명령을 번호 붙은 10칸 <code>/presets</code>에 저장, <code>/model</code>·<code>/permissions</code>에 값을 바로 붙여 모델·추론 수준·권한 설정, 원격 Bash 명령 중 비밀번호 같은 인증 정보 가리기.</li>
+     <li><b>Claude Code 2.1.310</b>(10/24(토) 08:39 KST, <a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.310" target="_blank" rel="noopener noreferrer">Claude Code 공식 릴리스</a>): 정리 주기(<code>cleanupPeriodDays</code>)를 아주 크게 잡으면 붙여 넣은 이미지 같은 최근 파일이 지워지던 문제, 「Prompt is too long」 뒤 대화 압축이 너무 많이 남겨 다시 실패하던 문제를 고쳤습니다. 윈도에서 Git Bash가 없을 때 일부 훅이 도구 호출을 그냥 통과시키던 문제도 고쳤습니다.</li>
+    </ol></div>
+   </div>
+   <div>
+    <div class="row"><b>오늘 해볼 것</b><ol>
+     <li><code>node -v</code>로 Node.js 버전을 봅니다. 22.23.4·24.22.1·26.12.1보다 낮으면 올립니다(<a href="#lead">1면</a> Brotli 구멍).</li>
+     <li>Codex는 <code>npm install -g @openai/codex</code>로 최신판(0.164.0 이상)으로 올린 뒤, 쉬운 일은 낮은 추론으로 시작했다가 막히면 같은 대화에서 <code>/model</code>로 추론 수준만 올려 봅니다. 이제 캐시가 유지됩니다.</li>
+     <li>Claude Code는 <code>claude update</code>로 2.1.310 이상으로 올립니다.</li>
+    </ol></div>
+   </div>
+  </div>
+  <details class="origin"><summary class="oh">🔗 원문 보기 <span>공식 원문 3개 · 탭하면 펼침</span></summary><ul class="olinks"><li><a href="https://x.com/thsottiaux/status/2113770573994299544" target="_blank" rel="noopener noreferrer">𝕏 Tibo 본인 X · Codex Day 19 업데이트</a><span class="url">https://x.com/thsottiaux/status/2113770573994299544</span></li><li><a href="https://github.com/openai/codex/releases/tag/rust-v0.164.0" target="_blank" rel="noopener noreferrer">Codex 공식 릴리스 · 0.164.0</a><span class="url">https://github.com/openai/codex/releases/tag/rust-v0.164.0</span></li><li><a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.310" target="_blank" rel="noopener noreferrer">Claude Code 공식 릴리스 · v2.1.310</a><span class="url">https://github.com/anthropics/claude-code/releases/tag/v2.1.310</span></li></ul><details class="askai" open><summary>🤖 다른 AI에 물어보기 <span>버튼 = 질문 문장 복사 → AI 앱에 붙여넣기</span></summary><div class="ask x"><span class="who">𝕏 Tibo 본인 X · Codex Day 19 업데이트</span><span class="to">→ <b>Grok</b>에 붙여넣기</span><div class="btns"><button type="button" class="cp grok" data-copy="https://x.com/thsottiaux/status/2113770573994299544 이 X 글을 이어진 쓰레드·첨부 영상·링크까지 끝까지 읽고, 빠짐없이 전문을 알기 쉬운 한국어로 번역해 줘" data-ai="grok">전문 번역 질문 복사</button><button type="button" class="cp grok" data-copy="https://x.com/thsottiaux/status/2113770573994299544 이 X 글의 핵심만 한국어 3줄로 요약해 줘" data-ai="grok">요약 질문 복사</button></div></div><div class="ask"><span class="who">Codex 공식 릴리스 · 0.164.0</span><span class="to">→ ChatGPT·Claude·Gemini·Grok 아무 데나</span><div class="btns"><button type="button" class="cp" data-copy="https://github.com/openai/codex/releases/tag/rust-v0.164.0 이 글 전문을 빠짐없이 알기 쉬운 한국어로 번역해 줘">전문 번역 질문 복사</button><button type="button" class="cp" data-copy="https://github.com/openai/codex/releases/tag/rust-v0.164.0 이 글의 핵심만 한국어 3줄로 요약해 줘">요약 질문 복사</button></div></div><div class="ask"><span class="who">Claude Code 공식 릴리스 · v2.1.310</span><span class="to">→ ChatGPT·Claude·Gemini·Grok 아무 데나</span><div class="btns"><button type="button" class="cp" data-copy="https://github.com/anthropics/claude-code/releases/tag/v2.1.310 이 글 전문을 빠짐없이 알기 쉬운 한국어로 번역해 줘">전문 번역 질문 복사</button><button type="button" class="cp" data-copy="https://github.com/anthropics/claude-code/releases/tag/v2.1.310 이 글의 핵심만 한국어 3줄로 요약해 줘">요약 질문 복사</button></div></div><p class="xnote">𝕏 글은 <b>Grok</b>에 붙여 넣으세요. ChatGPT·Claude·Gemini는 X 페이지를 열면 막히거나 글 일부만 보이는 경우가 많아, 이어진 글·영상까지 읽지 못합니다.</p></details></details>
+ </article>
+</section>
+
+<section class="sec" id="mon"><div class="sec-head"><span class="no">06</span><h2>오늘의 AI 장애</h2><span class="sub">지난 호 발행 → 이번 호 발행 사이 34시간 · 공급자 공식 상태 페이지 기준</span></div><div class="mon" data-mon-end="2026-10-25T15:50"><div class="mhead warn">⚠️ 우리 영향 1건 — 🟠 Claude Sonnet 5.5 등 여러 모델 오류 증가</div><div class="mhead gb">🤖 Grok Bot 공식 장애 1건 — 우리 봇에 직접 영향은 있지만 알림 대상은 아님(참고)</div><div class="range">⏱ <b>10/24(토) 05:30 ~ 10/25(일) 15:50 KST</b> <span>(직전 호 발행 → 이번 호 발행)</span></div><div class="mh"><span>발행 시각(15:50 KST)까지 집계 · 04:50~15:50 구간은 관제 파일 대신 공식 상태 API로 직접 확인 · Grok Bot은 Cursor 공식 상태 페이지의 Grok Bot 항목으로 확인</span></div><ul class="ilist top"><li class="imp1"><span class="ic" title="우리 영향 있을 수 있음">🟠</span><div><b class="svc"><button type="button" class="t who" aria-expanded="false" data-def="Anthropic의 AI(Claude 앱·Claude Code·API)입니다. 상태: status.claude.com" title="탭하면 설명">Claude</button></b> Claude Sonnet 5.5 등 여러 모델 오류 증가<br><span class="when">10/25(일) 15:14 KST ~ <b>진행 중</b> <span class="pt">(10/24 23:14 PT 시작)</span></span><span class="meta"><b>우리 영향 있을 수 있음 (자동 추정)</b> · 공식 등급 주요 장애 · <a href="https://stspg.io/s3wd6gmdsdhn" target="_blank" rel="noopener noreferrer">공식 상태 페이지</a></span><span class="en">원문 제목: Elevated errors for Claude Sonnet 5.5 and other models</span></div></li><li class="imp3"><span class="ic" title="">⚪ 없음</span><div><b class="svc"><button type="button" class="t who" aria-expanded="false" data-def="ChatGPT·OpenAI API를 운영하는 회사입니다. 상태: status.openai.com" title="탭하면 설명">OpenAI</button></b> Help Center Chat Support Degraded (공지)<br><span class="when">10/24(토) 06:30 ~ 07:02 KST <span class="pt">(10/23 14:30 PT 시작)</span></span><span class="meta"><b></b> · 공식 등급 참고 · <a href="https://status.openai.com/incidents/01M5NAR5GZC5M7D0S7AQ6CGEEN" target="_blank" rel="noopener noreferrer">공식 상태 페이지</a></span><span class="en">원문 제목: Help Center Chat Support Degraded</span></div></li><li class="imp3"><span class="ic" title="">🟠 있을 수 있음</span><div><b class="svc"><button type="button" class="t who" aria-expanded="false" data-def="ChatGPT·OpenAI API를 운영하는 회사입니다. 상태: status.openai.com" title="탭하면 설명">OpenAI</button></b> Degraded experience with ChatGPT app connections using CIMD (일부 장애)<br><span class="when">10/24(토) 07:52 ~ 08:43 KST <span class="pt">(10/23 15:52 PT 시작)</span></span><span class="meta"><b></b> · 공식 등급 경미 · <a href="https://status.openai.com/incidents/01M5NFF94XCJ6CGTD4S78A9BEB" target="_blank" rel="noopener noreferrer">공식 상태 페이지</a></span><span class="en">원문 제목: Degraded experience with ChatGPT app connections using CIMD</span></div></li><li class="imp3"><span class="ic" title="">🟠 있을 수 있음</span><div><b class="svc"><button type="button" class="t who" aria-expanded="false" data-def="Anthropic의 AI(Claude 앱·Claude Code·API)입니다. 상태: status.claude.com" title="탭하면 설명">Claude</button></b> Claude·Claude Code·Claude Cowork·Claude API 안 됨<br><span class="when">10/24(토) 08:37 ~ 09:11 KST <span class="pt">(10/23 16:37 PT 시작)</span></span><span class="meta"><b></b> · 공식 등급 심각 · <a href="https://status.claude.com/incidents/h101vcmhnfky" target="_blank" rel="noopener noreferrer">공식 상태 페이지</a></span><span class="en">원문 제목: Elevated errors for Claude Fable 5.1, Sonnet 5.5, and Haiku 5.5</span></div></li><li class="imp3"><span class="ic" title="">⚪ 없음</span><div><b class="svc"><button type="button" class="t who" aria-expanded="false" data-def="코드 저장소·PR·자동 시험(Actions)·Copilot을 제공하는 서비스입니다. 상태: githubstatus.com" title="탭하면 설명">GitHub</button></b> GitHub Copilot 느림<br><span class="when">10/24(토) 08:41 ~ 09:23 KST <span class="pt">(10/23 16:41 PT 시작)</span></span><span class="meta"><b></b> · 공식 등급 경미 · <a href="https://www.githubstatus.com/incidents/khv5nj9qy2kk" target="_blank" rel="noopener noreferrer">공식 상태 페이지</a></span><span class="en">원문 제목: Grok 4.6 and Grok 4.7 Service Issues</span></div></li><li class="imp3"><span class="ic" title="">🟠 있을 수 있음</span><div><b class="svc"><button type="button" class="t who" aria-expanded="false" data-def="Grok 모델과 API를 운영하는 회사(SpaceXSI)입니다. 상태: status.x.ai" title="탭하면 설명">xAI</button></b> xAI API 느림<br><span class="when">10/24(토) 09:03 ~ 09:04 KST <span class="pt">(10/23 17:03 PT 시작)</span></span><span class="meta"><b></b> · 공식 등급 경미 · <a href="https://status.x.ai/" target="_blank" rel="noopener noreferrer">공식 상태 페이지</a></span><span class="en">원문 제목: Degraded Model Performance</span></div></li><li class="imp3"><span class="ic" title="">🟠 있을 수 있음</span><div><b class="svc"><button type="button" class="t who" aria-expanded="false" data-def="Anthropic의 AI(Claude 앱·Claude Code·API)입니다. 상태: status.claude.com" title="탭하면 설명">Claude</button></b> Claude·Claude Code·Claude Cowork·Claude API 일부 안 됨<br><span class="when">10/24(토) 09:31 ~ 09:37 KST <span class="pt">(10/23 17:31 PT 시작)</span></span><span class="meta"><b></b> · 공식 등급 주요 장애 · <a href="https://status.claude.com/incidents/3cqf3pmlnr96" target="_blank" rel="noopener noreferrer">공식 상태 페이지</a></span><span class="en">원문 제목: Elevated errors for Claude Opus 5.5</span></div></li><li class="imp3"><span class="ic" title="">🟠 있을 수 있음</span><div><b class="svc"><button type="button" class="t who" aria-expanded="false" data-def="Anthropic의 AI(Claude 앱·Claude Code·API)입니다. 상태: status.claude.com" title="탭하면 설명">Claude</button></b> Claude·Claude Code·Claude Cowork·Claude API 일부 안 됨<br><span class="when">10/24(토) 14:16 ~ 14:53 KST <span class="pt">(10/23 22:16 PT 시작)</span></span><span class="meta"><b></b> · 공식 등급 주요 장애 · <a href="https://status.claude.com/incidents/0ns5clsk8p2x" target="_blank" rel="noopener noreferrer">공식 상태 페이지</a></span><span class="en">원문 제목: Elevated errors for Claude Fable 5 and Claude Fable 5.1</span></div></li></ul><ul class="pause"><li>💤 컴퓨터가 잠든 사이(10/24(토) 07:44 ~ 08:04 KST) 생긴 장애를 늦게 확인: OpenAI 07:52</li><li>💤 컴퓨터가 잠든 사이(10/24(토) 08:27 ~ 08:38 KST) 생긴 장애를 늦게 확인: Claude 08:37</li><li>⚠️ 감시 꺼짐 10/24(토) 09:18 ~ 09:28 KST(10분) · 컴퓨터를 다시 켠 뒤 감시가 다시 시작되지 않았던 구간</li><li>💤 컴퓨터가 잠든 사이(10/24(토) 14:13 ~ 14:33 KST) 생긴 장애를 늦게 확인: Claude 14:16</li><li>⚠️ 감시 꺼짐 10/24(토) 21:15 ~ 21:25 KST(10분) · 컴퓨터를 다시 켠 뒤 감시가 다시 시작되지 않았던 구간</li><li>⚠️ 감시 꺼짐 10/25(일) 01:17 ~ 01:39 KST(22분) · 컴퓨터를 다시 켠 뒤 감시가 다시 시작되지 않았던 구간</li></ul><div class="lg"><span>🔴 우리 영향 있음</span><span>🟠 있을 수 있음</span><span>⚪ 없음</span><span><i style="background:var(--ok)"></i>정상</span><span><i style="background:var(--slow)"></i>느림·일부</span><span><i style="background:var(--down)"></i>장애</span><span><i style="background:repeating-linear-gradient(45deg,var(--slow) 0 3px,#f0b878 3px 6px)"></i>참고</span></div><div style="height:6px"></div><div class="mgrp"><div class="gname">AI</div><div class="mrow"><span class="nm">Claude</span><div class="track" role="img" aria-label="Claude 장애"><span class="seg down" style="left:9.08%;width:1.65%" title="Elevated errors for Claude Fable 5.1, Sonnet 5.5, and Haiku 5.5"></span><span class="seg down" style="left:11.70%;width:0.40%" title="Elevated errors for Claude Opus 5.5"></span><span class="seg down" style="left:25.53%;width:1.80%" title="Elevated errors for Claude Fable 5 and Claude Fable 5.1"></span><span class="seg down ongo" style="left:98.25%;width:1.75%" title="Elevated errors for Claude Sonnet 5.5 and other models"></span></div><span class="st down">장애</span></div><div class="mrow"><span class="nm">OpenAI</span><div class="track" role="img" aria-label="OpenAI 느림·일부"><span class="seg info" style="left:2.91%;width:1.55%" title="Help Center Chat Support Degraded"></span><span class="seg slow" style="left:6.89%;width:2.48%" title="Degraded experience with ChatGPT app connections using CIMD"></span></div><span class="st bad">느림·일부</span></div><div class="mrow"><span class="nm">xAI</span><div class="track" role="img" aria-label="xAI 느림·일부"><span class="seg slow" style="left:10.34%;width:0.40%" title="Degraded Model Performance"></span></div><span class="st bad">느림·일부</span></div></div><div class="mgrp"><div class="gname">개발</div><div class="mrow"><span class="nm">GitHub</span><div class="track" role="img" aria-label="GitHub 느림·일부"><span class="seg slow" style="left:9.27%;width:2.04%" title="Grok 4.6 and Grok 4.7 Service Issues"></span></div><span class="st bad">느림·일부</span></div><div class="mrow ref"><span class="nm">Cursor<button type="button" class="t rtag" aria-expanded="false" data-def="Cursor는 참고용으로만 보여 줍니다. Cursor·Grok Bot·Cloudflare는 알림 대상이 아니며, 장애가 나도 위 「우리 영향」 판정에는 넣지 않습니다." title="탭하면 설명">참고</button></span><div class="track" role="img" aria-label="Cursor 정상"></div><span class="st ">정상</span></div><div class="mrow ref"><span class="nm">Grok Bot<button type="button" class="t rtag" aria-expanded="false" data-def="Grok Bot는 참고용으로만 보여 줍니다. Cursor·Grok Bot·Cloudflare는 알림 대상이 아니며, 장애가 나도 위 「우리 영향」 판정에는 넣지 않습니다." title="탭하면 설명">참고</button></span><div class="track" role="img" aria-label="Grok Bot 장애"><span class="seg down" style="left:9.17%;width:1.99%" title="Investigating service outage - Grok models unavailable"></span></div><span class="st down">장애</span></div></div><div class="mgrp"><div class="gname">기반</div><div class="mrow ref"><span class="nm">Cloudflare<button type="button" class="t rtag" aria-expanded="false" data-def="Cloudflare는 참고용으로만 보여 줍니다. Cursor·Grok Bot·Cloudflare는 알림 대상이 아니며, 장애가 나도 위 「우리 영향」 판정에는 넣지 않습니다." title="탭하면 설명">참고</button></span><div class="track" role="img" aria-label="Cloudflare 정상"></div><span class="st ">정상</span></div><div class="mrow"><span class="nm">AWS 서울</span><div class="track" role="img" aria-label="AWS 서울 정상"></div><span class="st ">정상</span></div></div><div class="ticks"><span></span><div class="sc"><span style="left:0">05:30</span><span style="left:18.93%">12시</span><span style="left:36.41%">18시</span><span style="left:53.88%">00시</span><span style="left:71.36%">06시</span><span style="left:88.83%">12시</span><span style="left:100%">15:50</span></div><span></span></div><div class="refh">참고 · Cursor·Grok Bot·Cloudflare 공식 장애 1건(알림 대상 아님)</div><ul class="ilist"><li class="imp-ref gb"><span class="ic">🤖</span><div><span class="gbtag">🤖 우리 봇에 직접 영향</span> <b class="svc"><button type="button" class="t who" aria-expanded="false" data-def="우리가 쓰는 AI 직원 서비스입니다. Cursor 상태 페이지(status.cursor.com)의 Grok Bot 항목을 봅니다. 장애가 나면 우리 봇 작업이 직접 멈추거나 늦어집니다." title="탭하면 설명">Grok Bot</button></b> Cursor (IDE)·Cloud Agents·Grok Bot·Automations·CLI·cursor.com 일부 안 됨<br><span class="when">10/24(토) 08:39 ~ 09:20 KST <span class="pt">(10/23 16:39 PT 시작)</span></span><span class="meta">참고 · 알림 대상 아님 · <a href="https://status.cursor.com/incidents/z1rz4fcd48j6" target="_blank" rel="noopener noreferrer">공식 상태 페이지</a></span><span class="en">원문 제목: Investigating service outage - Grok models unavailable</span></div></li></ul></div></section>
+
+<section class="sec glossary" id="glossary"><div class="sec-head"><span class="no">07</span><h2>AI 용어 사전</h2><span class="sub">이번 호에 나온 16개 · 본문에 나온 순서</span></div><div class="gcols"><div class="gcat"><div class="ghead">용어 <span>7개</span></div><details><summary>레드팀</summary><div class="def">일부러 공격자 역할을 맡아 약점을 찾아내는 점검 방식입니다.</div></details><details><summary>Brotli</summary><div class="def">Google이 만든 데이터 압축 라이브러리입니다. 웹에서 파일을 작게 줄여 주고받을 때 많이 씁니다.</div></details><details><summary>원격 코드 실행</summary><div class="def">인터넷 너머의 공격자가 남의 컴퓨터에서 마음대로 프로그램을 실행하는 것입니다. 보안 구멍 가운데 가장 위험한 종류로 꼽힙니다.</div></details><details><summary>CVE</summary><div class="def">전 세계 공통으로 쓰는 보안 취약점 번호입니다.</div></details><details class="gmore"><summary>더보기 3개</summary><details><summary>Grok Imagine</summary><div class="def">xAI의 이미지·영상 생성 기능입니다.</div></details><details><summary>대역폭</summary><div class="def">한 번에 주고받을 수 있는 데이터의 양입니다. 클수록 더 많은 사람이 더 빠르게 씁니다.</div></details><details><summary>캐시</summary><div class="def">앞서 처리한 대화 내용을 저장해 두고 다시 쓰는 것입니다. 캐시가 살아 있으면 같은 내용을 처음부터 다시 처리하지 않습니다.</div></details></details></div><div class="gcat"><div class="ghead">인물·회사·기관·사건 <span>9개</span></div><details><summary>Alex Albert</summary><div class="def">Anthropic에서 일하는 사람입니다. 본인 X 소개에 「Research @AnthropicAI」라고 적었습니다.</div></details><details><summary>일론 머스크</summary><div class="def">테슬라·스페이스X 최고경영자이자 xAI 창업자입니다.</div></details><details><summary>Katie Miller</summary><div class="def">본인 X 소개에 팟캐스트 계정(@katiemillerpod)을 적어 둔 사람입니다. 이번 대담 영상을 X에 올렸습니다.</div></details><details><summary>Tibo</summary><div class="def">OpenAI에서 Codex와 ChatGPT를 맡고 있다고 본인 X 소개에 적은 사람입니다(@thsottiaux).</div></details><details class="gmore"><summary>더보기 5개</summary><details><summary>Claude</summary><div class="def">Anthropic의 AI(Claude 앱·Claude Code·API)입니다. 상태: status.claude.com</div></details><details><summary>OpenAI</summary><div class="def">ChatGPT·OpenAI API를 운영하는 회사입니다. 상태: status.openai.com</div></details><details><summary>GitHub</summary><div class="def">코드 저장소·PR·자동 시험(Actions)·Copilot을 제공하는 서비스입니다. 상태: githubstatus.com</div></details><details><summary>xAI</summary><div class="def">Grok 모델과 API를 운영하는 회사(SpaceXSI)입니다. 상태: status.x.ai</div></details><details><summary>Grok Bot</summary><div class="def">우리가 쓰는 AI 직원 서비스입니다. Cursor 상태 페이지(status.cursor.com)의 Grok Bot 항목을 봅니다. 장애가 나면 우리 봇 작업이 직접 멈추거나 늦어집니다.</div></details></details></div></div></section><style>.glossary .ghead{font-weight:700;margin:4px 0 6px}.glossary .ghead span{font-weight:400;color:#888;font-size:.85em}.glossary .gmore>summary{cursor:pointer;color:#555;font-size:.9em;padding:6px 0}.totop{position:fixed;right:14px;bottom:14px;z-index:50;background:#111;color:#fff;border:0;border-radius:20px;padding:8px 12px;font-size:13px;opacity:.85;cursor:pointer}</style><button type="button" class="totop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="맨 위로">↑ 맨 위로</button>
+
+<footer>
+ <span>브리핑 데일리 · 제8호 · 주말판 · 김일론 대표 개인용 · 연예·스포츠·광고·소문 제외</span>
+ <span>모든 원화 = 1,324원/달러 · 시간 = KST 먼저, 괄호에 현지 시간 · 링크는 모두 새 창</span>
+</footer>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script>
+/* 브리핑 데일리 · 탭 설명 + 복사 (모바일 탭 지원, 외부 라이브러리 없음) */
+(function(){
+  var T=document.getElementById('toast'),tt;
+  function toast(m){ if(!T) return; T.textContent=m; T.classList.add('on'); clearTimeout(tt); tt=setTimeout(function(){T.classList.remove('on')},1800); }
+  function esc(s){ return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]}); }
+  function defHtml(d){ /* «표: 머리,머리; 값,값; ★값,값» → 작은 표 */
+    return String(d).split(/(«표:[^»]*»)/).map(function(part){
+      var m=part.match(/^«표:([^»]*)»$/); if(!m) return esc(part);
+      var rows=m[1].split(';').map(function(r){return r.trim()}).filter(Boolean);
+      return '<table class="ttab">'+rows.map(function(r,i){ var hl=r.charAt(0)==='★'; var c=r.replace(/^★/,'').split(',');
+        var tg=i===0?'th':'td'; return '<tr'+(hl?' class="hl"':'')+'>'+c.map(function(x){return '<'+tg+'>'+esc(x.trim())+'</'+tg+'>'}).join('')+'</tr>'; }).join('')+'</table>';
+    }).join('');
+  }
+  function anchorOf(b){ return (b.classList.contains('rtag')&&b.closest('.mrow'))||b; }
+  function closeDef(b){ var n=anchorOf(b).nextElementSibling; if(n&&n.classList.contains('tdef')) n.parentNode.removeChild(n); b.setAttribute('aria-expanded','false'); }
+  function openDef(b){
+    var who=b.classList.contains('who'), d=document.createElement('span');
+    d.className='tdef'+(who?' who':''); d.setAttribute('role','note');
+    d.innerHTML='<b class="k">'+(who?'누구·무엇':'용어')+'</b>'+defHtml(b.getAttribute('data-def'))+'<button type="button" class="x" aria-label="설명 닫기">×</button>';
+    var a=anchorOf(b); if(a!==b) d.setAttribute('data-for','rtag'); a.parentNode.insertBefore(d,a.nextSibling); b.setAttribute('aria-expanded','true');
+  }
+  function fallbackCopy(text){
+    var ta=document.createElement('textarea'); ta.value=text; ta.setAttribute('readonly','');
+    ta.style.cssText='position:fixed;top:0;left:0;width:1px;height:1px;opacity:0;font-size:16px';
+    document.body.appendChild(ta); ta.focus(); ta.select();
+    try{ ta.setSelectionRange(0,text.length); }catch(e){}
+    var ok=false; try{ ok=document.execCommand('copy'); }catch(e){}
+    document.body.removeChild(ta); return ok;
+  }
+  function done(btn){
+    var o=btn.getAttribute('data-label')||btn.textContent; btn.setAttribute('data-label',o);
+    btn.classList.add('ok'); btn.textContent='복사됨'; toast(btn.getAttribute('data-ai')==='grok'?'질문 복사됨 · Grok 앱에 붙여 넣으세요 (X 글은 Grok이 가장 잘 읽어요)':'질문 복사됨 · ChatGPT·Claude·Gemini·Grok 앱에 붙여 넣으세요');
+    setTimeout(function(){ btn.classList.remove('ok'); btn.textContent=o; },1600);
+  }
+  function copy(text,btn){
+    if(navigator.clipboard && window.isSecureContext){
+      navigator.clipboard.writeText(text).then(function(){done(btn)},function(){ fallbackCopy(text)?done(btn):window.prompt('길게 눌러 복사하세요',text); });
+    } else { fallbackCopy(text)?done(btn):window.prompt('길게 눌러 복사하세요',text); }
+  }
+  document.addEventListener('click',function(e){
+    var x=e.target.closest&&e.target.closest('.tdef .x');
+    if(x){ var d=x.parentNode, b=d.previousElementSibling; if(b&&b.classList.contains('mrow')) b=b.querySelector('button.t.rtag'); if(b&&b.classList.contains('t')) closeDef(b); else d.parentNode.removeChild(d); return; }
+    var t=e.target.closest&&e.target.closest('button.t');
+    if(t){ e.preventDefault(); (t.getAttribute('aria-expanded')==='true')?closeDef(t):openDef(t); return; }
+    var c=e.target.closest&&e.target.closest('.cp');
+    if(c){ e.preventDefault(); copy(c.getAttribute('data-copy'),c); }
+  });
+
+  /* 10/25 The Daily AI 맞춤: 본문 링크 → 설명 상자 + 「원문 열기」 */
+  function host(u){ try{ return new URL(u).hostname.replace(/^www\./,''); }catch(e){ return u; } }
+  document.addEventListener('click',function(e){
+    var cx=e.target.closest&&e.target.closest('.lx .lx-x'); if(cx){ var bx=cx.parentNode; bx.previousElementSibling.setAttribute('aria-expanded','false'); bx.parentNode.removeChild(bx); return; }
+    var a=e.target.closest&&e.target.closest('a[href^="http"]');
+    if(!a||a.classList.contains('lx-open')||a.closest('.origin,.lx,.mon,footer,nav')) return;
+    e.preventDefault();
+    var n=a.nextElementSibling; if(n&&n.classList.contains('lx')){ n.parentNode.removeChild(n); a.setAttribute('aria-expanded','false'); return; }
+    var b=document.createElement('span'); b.className='lx'; b.setAttribute('role','note');
+    b.innerHTML='<button type="button" class="lx-x" aria-label="닫기">×</button><span class="lx-t">'+esc(a.textContent)+'</span><span class="lx-h">'+esc(host(a.href))+'</span><br><a class="lx-open" href="'+esc(a.href)+'" target="_blank" rel="noopener noreferrer">원문 열기 ↗</a>';
+    a.parentNode.insertBefore(b,a.nextSibling); a.setAttribute('aria-expanded','true');
+  });
+  /* 장애 목록 3~5개 + 더보기 */
+  function more(list,sel,keep){ var it=list.querySelectorAll(sel); if(it.length<=keep) return;
+    for(var j=keep;j<it.length;j++) it[j].classList.add('more-hide');
+    var bt=document.createElement('button'); bt.type='button'; bt.className='more-btn'; bt.textContent='더보기 '+(it.length-keep)+'개';
+    bt.onclick=function(){ for(var j=keep;j<it.length;j++) it[j].classList.remove('more-hide'); bt.parentNode.removeChild(bt); };
+    it[it.length-1].parentNode.insertBefore(bt,it[it.length-1].nextSibling); }
+  var ms=document.querySelectorAll('.mon .ilist'); for(var k=0;k<ms.length;k++) more(ms[k],':scope > li',5);
+  var mn=document.querySelector('.mon'); if(mn) more(mn,'.mrow:not(.ref)',5);
+  /* 안전장치: 빌드에서 이미 넣지만, 혹시 빠진 외부 링크도 새 창으로 */
+  var as=document.querySelectorAll('a[href^="http"]');
+  for(var i=0;i<as.length;i++){ as[i].target='_blank'; as[i].rel='noopener noreferrer'; }
+})();
+
+</script>
+</body></html>
