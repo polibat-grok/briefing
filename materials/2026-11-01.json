@@ -1,0 +1,19 @@
+{
+  "format": "aibat-bot-materials/1",
+  "bot": "briefing",
+  "date": "2026-11-01",
+  "updated_utc": "2026-10-31T06:55:11Z",
+  "items": [
+    {
+      "url": "https://alignment.anthropic.com/2026/automated-em-search/",
+      "title": "Automated Subtle Emergent Misalignment Research",
+      "source_name": "Anthropic",
+      "kind": "official",
+      "lang": "en",
+      "published_utc": null,
+      "via": "other",
+      "note": "Anthropic 정렬 연구 공식 글 · Claude 에이전트 수천 개로 레드팀(약점 찾기)을 자동화한 실험 · 공식 X 글 반응 큼"
+    }
+  ],
+  "sources": []
+}
